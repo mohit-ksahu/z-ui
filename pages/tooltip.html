@@ -1,0 +1,44 @@
+<section id="tooltip" class="section">
+  <h2>Tooltip</h2>
+  <p class="section-meta">CSS-driven tooltip via Anchor Positioning, activated on hover or focus.</p>
+
+  <preview>
+    <span class="tooltip-trigger" style="anchor-name: --tt-demo">
+      <button class="btn btn-outline">Hover for Info</button>
+      <span class="tooltip-content" style="position-anchor: --tt-demo" data-placement="top">
+        This is a helpful tooltip message.
+      </span>
+    </span>
+  </preview>
+
+  <h3>Placements</h3>
+  <preview style="gap: 1rem; flex-wrap: wrap; justify-content: center; padding: 2rem">
+    <span class="tooltip-trigger" style="anchor-name: --tt-placed-bottom">
+      <button class="btn btn-outline btn-sm">Bottom</button>
+      <span class="tooltip-content" data-placement="bottom" style="position-anchor: --tt-placed-bottom">
+        Opens below the trigger.
+      </span>
+    </span>
+
+    <span class="tooltip-trigger" style="anchor-name: --tt-placed-top">
+      <button class="btn btn-outline btn-sm">Top</button>
+      <span class="tooltip-content" data-placement="top" style="position-anchor: --tt-placed-top">
+        Opens above the trigger.
+      </span>
+    </span>
+
+    <span class="tooltip-trigger" style="anchor-name: --tt-placed-left">
+      <button class="btn btn-outline btn-sm">Left</button>
+      <span class="tooltip-content" data-placement="left" style="position-anchor: --tt-placed-left">
+        Opens to the left of the trigger.
+      </span>
+    </span>
+
+    <span class="tooltip-trigger" style="anchor-name: --tt-placed-right">
+      <button class="btn btn-outline btn-sm">Right</button>
+      <span class="tooltip-content" data-placement="right" style="position-anchor: --tt-placed-right">
+        Opens to the right of the trigger.
+      </span>
+    </span>
+  </preview>
+</section>

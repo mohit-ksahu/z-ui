@@ -1,0 +1,35 @@
+<section id="textarea" class="section">
+  <h2>Textarea</h2>
+  <p class="section-meta">Displays a form textarea or a component that looks like a textarea.</p>
+
+  <preview>
+    <textarea class="textarea" placeholder="Type your message here..." style="max-width: 320px; width: 100%"></textarea>
+  </preview>
+
+  <h3>Disabled</h3>
+  <preview>
+    <textarea class="textarea" placeholder="Biography..." disabled style="max-width: 320px; width: 100%"></textarea>
+  </preview>
+
+  <h3>Textarea Label</h3>
+  <preview>
+    <div style="display: grid; gap: 0.375rem; max-width: 320px; width: 100%">
+      <label for="ta-desc" class="label">Project Description</label>
+      <textarea id="ta-desc" class="textarea" placeholder="Briefly describe your project goals..." rows="3"></textarea>
+      <p style="margin: 0; font-size: 0.75rem; color: var(--muted-foreground)">
+        This will be visible to all team members.
+      </p>
+    </div>
+  </preview>
+
+  <h3>Textarea Button</h3>
+  <preview>
+    <div style="display: flex; flex-direction: column; gap: 0.5rem; max-width: 320px">
+      <textarea class="textarea" placeholder="Write a comment..." rows="3"></textarea>
+      <button class="btn btn-primary" style="align-self: flex-start">
+        <i data-lucide="send" style="width: 16px; height: 16px; margin-right: 0.5rem"></i>
+        Post Comment
+      </button>
+    </div>
+  </preview>
+</section>

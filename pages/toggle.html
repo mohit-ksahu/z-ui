@@ -1,0 +1,79 @@
+<section id="toggle" class="section">
+  <h2>Toggle</h2>
+  <p class="section-meta">A two-state button that can be either on or off.</p>
+
+  <preview>
+    <input type="checkbox" id="t-power" class="toggle-input" />
+    <label class="toggle" for="t-power"><i data-lucide="power"></i></label>
+  </preview>
+
+  <h3>Toggle Outline</h3>
+  <preview>
+    <input type="checkbox" id="t-outline-lock" class="toggle-input" />
+    <label class="toggle toggle-outline" for="t-outline-lock"><i data-lucide="lock"></i></label>
+  </preview>
+
+  <h3>Toggle Text</h3>
+  <preview>
+    <input type="checkbox" id="t-text-private" class="toggle-input" checked />
+    <label class="toggle" for="t-text-private">
+      <i data-lucide="eye-off"></i>
+      Private Mode
+    </label>
+  </preview>
+
+  <h3>Toggle Sizes</h3>
+  <preview>
+    <input type="checkbox" id="t-sm-w" class="toggle-input" />
+    <label class="toggle toggle-sm" for="t-sm-w"><i data-lucide="wifi"></i></label>
+
+    <input type="checkbox" id="t-md-w" class="toggle-input" />
+    <label class="toggle" for="t-md-w"><i data-lucide="wifi"></i></label>
+
+    <input type="checkbox" id="t-lg-w" class="toggle-input" />
+    <label class="toggle toggle-lg" for="t-lg-w"><i data-lucide="wifi"></i></label>
+  </preview>
+
+  <h3>Disabled</h3>
+  <preview>
+    <input type="checkbox" id="t-dis-off" class="toggle-input" disabled />
+    <label class="toggle" for="t-dis-off"><i data-lucide="bookmark"></i></label>
+
+    <input type="checkbox" id="t-dis-on" class="toggle-input" checked disabled />
+    <label class="toggle" for="t-dis-on"><i data-lucide="heart"></i></label>
+  </preview>
+
+  <h3>Toggle Icons</h3>
+  <p class="section-meta">Toggle icons can dynamically change on active states using native CSS overriding.</p>
+  <preview>
+    <style>
+      .toggle-icon-swap .icon-off {
+        display: none;
+      }
+
+      .toggle-icon-swap .icon-on {
+        display: inline-flex;
+      }
+
+      .toggle-input:checked + .toggle-icon-swap .icon-on {
+        display: none;
+      }
+
+      .toggle-input:checked + .toggle-icon-swap .icon-off {
+        display: inline-flex;
+      }
+
+      .toggle-input:checked + .toggle-icon-swap {
+        color: var(--destructive);
+        background-color: color-mix(in oklch, var(--destructive) 10%, transparent);
+        border-color: color-mix(in oklch, var(--destructive) 20%, transparent);
+      }
+    </style>
+    <input type="checkbox" id="t-icon-change" class="toggle-input" />
+    <label class="toggle toggle-outline toggle-icon-swap" for="t-icon-change">
+      <i data-lucide="bell" class="icon-on"></i>
+      <i data-lucide="bell-off" class="icon-off"></i>
+      <span class="state-text">Notifications</span>
+    </label>
+  </preview>
+</section>

@@ -1,0 +1,118 @@
+<section id="hover-card" class="section">
+  <h2>Hover Card</h2>
+  <p class="section-meta">For sighted users to preview content available behind a link.</p>
+
+  <preview>
+    <span class="hover-card-trigger" style="anchor-name: --hc-1">
+      <a href="javascript:void(0)" style="font-weight: 500; text-decoration: none; color: var(--foreground)">@nextjs</a>
+      <span class="hover-card-content" style="position-anchor: --hc-1">
+        <div style="display: flex; gap: 1rem">
+          <span class="avatar" data-size="lg" style="background-color: var(--foreground); color: var(--background)">
+            <i data-lucide="layers" style="width: 1.5rem; height: 1.5rem"></i>
+          </span>
+          <div style="flex: 1; min-width: 0">
+            <div style="font-weight: 500; font-size: 0.875rem; line-height: 1.3">Next.js</div>
+            <div style="font-size: 0.75rem; color: var(--muted-foreground); margin-top: 1px">Web Framework</div>
+          </div>
+        </div>
+        <p style="margin: 0.625rem 0 0; font-size: 0.75rem; color: var(--muted-foreground); line-height: 1.5">
+          The React framework for the web. Used by some of the world's largest companies.
+        </p>
+        <div style="display: flex; gap: 1rem; margin-top: 0.5rem">
+          <span>
+            <strong style="color: var(--foreground); font-weight: 500">120k</strong>
+            <span style="color: var(--muted-foreground)">Stars</span>
+          </span>
+          <span>
+            <strong style="color: var(--foreground); font-weight: 500">4.2m</strong>
+            <span style="color: var(--muted-foreground)">Installs</span>
+          </span>
+        </div>
+      </span>
+    </span>
+  </preview>
+
+  <h3>Dependencies</h3>
+  <preview>
+    <span class="hover-card-trigger" tabindex="0" style="anchor-name: --hc-2">
+      <span class="badge badge-secondary" style="cursor: default">react@18.2.0</span>
+      <span class="hover-card-content" style="position-anchor: --hc-2">
+        <div style="display: flex; flex-direction: column; gap: 0.25rem">
+          <div style="font-weight: 500; font-size: 0.875rem">React</div>
+          <div style="font-size: 0.75rem; color: var(--muted-foreground)">
+            A JavaScript library for building user interfaces
+          </div>
+          <div style="display: flex; align-items: center; margin-top: 0.25rem">
+            <span class="badge badge-default">MIT License</span>
+          </div>
+        </div>
+      </span>
+    </span>
+
+    <span class="hover-card-trigger" tabindex="0" style="anchor-name: --hc-3">
+      <span class="badge badge-outline" style="cursor: default">typescript@5.4.5</span>
+      <span class="hover-card-content" style="position-anchor: --hc-3">
+        <div style="display: flex; flex-direction: column; gap: 0.25rem">
+          <div style="font-weight: 500; font-size: 0.875rem">TypeScript</div>
+          <div style="font-size: 0.75rem; color: var(--muted-foreground)">
+            TypeScript is a language for application-scale JavaScript.
+          </div>
+          <div style="display: flex; align-items: center; margin-top: 0.25rem">
+            <span class="badge badge-default">Apache-2.0</span>
+          </div>
+        </div>
+      </span>
+    </span>
+  </preview>
+
+  <h3>Placements</h3>
+  <preview>
+    <span class="hover-card-trigger" style="anchor-name: --hcs-b">
+      <button class="btn btn-outline btn-sm">Bottom</button>
+      <span
+        class="hover-card-content"
+        data-placement="bottom"
+        style="position-anchor: --hcs-b; position-try-fallbacks: none"
+      >
+        <div style="font-weight: 500; font-size: 0.875rem; margin-bottom: 0.25rem">Bottom</div>
+        <p style="margin: 0; font-size: 0.75rem; color: var(--muted-foreground)">Opens below the trigger element.</p>
+      </span>
+    </span>
+
+    <span class="hover-card-trigger" style="anchor-name: --hcs-t">
+      <button class="btn btn-outline btn-sm">Top</button>
+      <span
+        class="hover-card-content"
+        data-placement="top"
+        style="position-anchor: --hcs-t; position-try-fallbacks: none"
+      >
+        <div style="font-weight: 500; font-size: 0.875rem; margin-bottom: 0.25rem">Top</div>
+        <p style="margin: 0; font-size: 0.75rem; color: var(--muted-foreground)">Opens above the trigger element.</p>
+      </span>
+    </span>
+
+    <span class="hover-card-trigger" style="anchor-name: --hcs-r">
+      <button class="btn btn-outline btn-sm">Right</button>
+      <span
+        class="hover-card-content"
+        data-placement="right"
+        style="position-anchor: --hcs-r; position-try-fallbacks: none"
+      >
+        <div style="font-weight: 500; font-size: 0.875rem; margin-bottom: 0.25rem">Right</div>
+        <p style="margin: 0; font-size: 0.75rem; color: var(--muted-foreground)">Opens to the right of the trigger.</p>
+      </span>
+    </span>
+
+    <span class="hover-card-trigger" style="anchor-name: --hcs-l">
+      <button class="btn btn-outline btn-sm">Left</button>
+      <span
+        class="hover-card-content"
+        data-placement="left"
+        style="position-anchor: --hcs-l; position-try-fallbacks: none"
+      >
+        <div style="font-weight: 500; font-size: 0.875rem; margin-bottom: 0.25rem">Left</div>
+        <p style="margin: 0; font-size: 0.75rem; color: var(--muted-foreground)">Opens to the left of the trigger.</p>
+      </span>
+    </span>
+  </preview>
+</section>

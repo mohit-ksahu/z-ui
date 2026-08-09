@@ -1,0 +1,123 @@
+<section id="input" class="section">
+  <h2>Input</h2>
+  <p class="section-meta">Displays a form input field or a component that looks like an input field.</p>
+
+  <!-- Basic -->
+  <h3>Basic</h3>
+  <preview>
+    <div style="width: 100%; max-width: 320px">
+      <input type="text" class="input" placeholder="Project Name" />
+    </div>
+  </preview>
+
+  <!-- Field -->
+  <h3>Input Label</h3>
+  <preview>
+    <div style="display: flex; flex-direction: column; gap: 0.375rem; width: 100%; max-width: 320px">
+      <label for="f-endpoint" class="label">Website URL</label>
+      <input type="text" id="f-endpoint" class="input" placeholder="https://example.com" />
+    </div>
+  </preview>
+
+  <!-- Disabled -->
+  <h3>Disabled</h3>
+  <preview>
+    <div style="width: 100%; max-width: 320px">
+      <input disabled type="text" class="input" value="my-personal-website" />
+    </div>
+  </preview>
+
+  <!-- Invalid -->
+  <h3>Invalid</h3>
+  <preview>
+    <div style="display: flex; flex-direction: column; gap: 0.375rem; width: 100%; max-width: 320px">
+      <label for="inv-age" class="label">Age</label>
+      <input type="number" id="inv-age" class="input" value="-5" aria-invalid="true" />
+      <p style="font-size: 0.875rem; color: var(--destructive); margin: 0">Age must be a positive number.</p>
+    </div>
+  </preview>
+
+  <!-- File -->
+  <h3>File</h3>
+  <p class="section-meta">
+    Use the
+    <code>type="file"</code>
+    prop to create a file input.
+  </p>
+  <preview>
+    <div style="display: flex; flex-direction: column; gap: 0.375rem; width: 100%; max-width: 320px">
+      <label for="file-up" class="label">Profile Picture</label>
+      <input type="file" id="file-up" class="input" accept=".jpg,.png" />
+      <p style="font-size: 0.875rem; color: var(--muted-foreground); margin: 0">
+        Upload a square image (.jpg or .png).
+      </p>
+    </div>
+  </preview>
+
+  <!-- Inline -->
+  <h3>Inline Input</h3>
+  <p class="section-meta">Horizontal layout using simple flex alignment on the wrapper.</p>
+  <preview>
+    <div style="display: flex; align-items: center; gap: 1rem; width: 100%; max-width: 320px">
+      <label for="inl-token" class="label" style="flex-shrink: 0">Secret</label>
+      <input type="password" id="inl-token" class="input" placeholder="Access Token" />
+    </div>
+  </preview>
+
+  <!-- Required -->
+  <h3>Required</h3>
+  <preview>
+    <div style="display: flex; flex-direction: column; gap: 0.375rem; width: 100%; max-width: 320px">
+      <label for="req-email" class="label">
+        Email Address
+        <span style="color: var(--destructive)">*</span>
+      </label>
+      <input type="email" id="req-email" class="input" placeholder="alex@example.com" required />
+    </div>
+  </preview>
+
+  <!-- Badge -->
+  <h3>Input Badge</h3>
+  <preview>
+    <div style="display: flex; flex-direction: column; gap: 0.375rem; width: 100%; max-width: 320px">
+      <div style="display: flex; align-items: center; justify-content: space-between">
+        <label for="b-proj" class="label">Project Title</label>
+        <span class="badge badge-secondary">Private</span>
+      </div>
+      <input type="text" id="b-proj" class="input" value="Marketing Strategy 2024" />
+    </div>
+  </preview>
+
+  <!-- With Button -->
+  <h3>Action Button</h3>
+  <preview>
+    <div style="display: flex; gap: 0.5rem; width: 100%; max-width: 320px">
+      <input type="text" id="bg-domain" class="input" placeholder="Custom Domain" style="flex: 1; min-width: 0" />
+      <button class="btn btn-outline" style="flex: none">Verify</button>
+    </div>
+  </preview>
+
+  <!-- Form -->
+  <h3>Card Form</h3>
+  <preview>
+    <form class="card" style="width: 100%; max-width: 380px">
+      <div class="card-header">
+        <div class="card-title">Update Profile</div>
+        <div class="card-description">Manage your public information and preferences.</div>
+      </div>
+      <div class="card-content" style="display: flex; flex-direction: column; gap: 1.25rem">
+        <div style="display: flex; flex-direction: column; gap: 0.375rem">
+          <label for="form-name" class="label">Display Name</label>
+          <input type="text" id="form-name" class="input" placeholder="Alex" required />
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.375rem">
+          <label for="form-pass" class="label">New Password</label>
+          <input type="password" id="form-pass" class="input" required />
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary" style="width: 100%">Save Changes</button>
+      </div>
+    </form>
+  </preview>
+</section>

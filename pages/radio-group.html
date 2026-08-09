@@ -1,0 +1,153 @@
+<section id="radio-group" class="section">
+  <h2>Radio Group</h2>
+  <p class="section-meta">
+    A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.
+  </p>
+
+  <preview>
+    <div class="radio-group" style="flex-direction: column">
+      <label class="radio-label">
+        <input type="radio" class="radio" name="env" value="dev" />
+        <span>Development</span>
+      </label>
+      <label class="radio-label">
+        <input type="radio" class="radio" name="env" value="stage" checked />
+        <span>Staging</span>
+      </label>
+      <label class="radio-label">
+        <input type="radio" class="radio" name="env" value="prod" />
+        <span>Production</span>
+      </label>
+    </div>
+  </preview>
+
+  <h3>Radio Description</h3>
+  <preview>
+    <div style="display: grid; gap: 0.75rem; max-width: 320px; width: 100%">
+      <label
+        style="
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 0.375rem 0.75rem;
+          align-items: start;
+          cursor: default;
+        "
+      >
+        <input type="radio" class="radio" name="size" value="small" style="margin-top: 2px" />
+        <div>
+          <span class="label" style="display: block">Small</span>
+          <span style="font-size: 0.75rem; color: var(--muted-foreground)">
+            Perfect for personal use and side projects.
+          </span>
+        </div>
+      </label>
+      <label
+        style="
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 0.375rem 0.75rem;
+          align-items: start;
+          cursor: default;
+        "
+      >
+        <input type="radio" class="radio" name="size" value="medium" checked style="margin-top: 2px" />
+        <div>
+          <span class="label" style="display: block">Medium</span>
+          <span style="font-size: 0.75rem; color: var(--muted-foreground)">
+            Balanced performance for professional teams.
+          </span>
+        </div>
+      </label>
+      <label
+        style="
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 0.375rem 0.75rem;
+          align-items: start;
+          cursor: default;
+        "
+      >
+        <input type="radio" class="radio" name="size" value="large" style="margin-top: 2px" />
+        <div>
+          <span class="label" style="display: block">Large</span>
+          <span style="font-size: 0.75rem; color: var(--muted-foreground)">
+            High-performance resources for complex workflows.
+          </span>
+        </div>
+      </label>
+    </div>
+  </preview>
+
+  <h3>Radio Card</h3>
+  <p class="section-meta">Card-style selection where the wrapper acts as a clickable card pattern.</p>
+  <style>
+    .radio-card-showcase {
+      background-color: var(--background);
+      transition:
+        border-color 100ms ease,
+        background-color 100ms ease;
+    }
+
+    .radio-card-showcase:has(.radio:checked) {
+      border-color: var(--accent);
+      background-color: color-mix(in oklch, var(--accent) 15%, transparent);
+    }
+
+    .dark .radio-card-showcase:has(.radio:checked) {
+      background-color: color-mix(in oklch, var(--accent) 15%, transparent);
+    }
+  </style>
+  <preview>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; width: 100%; max-width: 500px">
+      <label
+        class="card radio-card-showcase"
+        style="display: flex; flex-direction: column; padding: 1rem; gap: 1rem; cursor: pointer"
+      >
+        <div style="display: flex; justify-content: space-between; align-items: flex-start">
+          <input type="radio" class="radio" name="plan_sub" />
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.25rem">
+          <span style="font-size: 1rem; font-weight: 500">Monthly</span>
+          <span style="font-size: 0.875rem; color: var(--muted-foreground)">USD 20.00/month + tax</span>
+        </div>
+      </label>
+
+      <label
+        class="card radio-card-showcase"
+        style="display: flex; flex-direction: column; padding: 1rem; gap: 1rem; cursor: pointer"
+      >
+        <div style="display: flex; justify-content: space-between; align-items: flex-start">
+          <input type="radio" class="radio" name="plan_sub" checked />
+          <span
+            class="badge badge-secondary"
+            style="
+              background-color: color-mix(in oklch, var(--accent) 20%, transparent);
+              color: var(--accent);
+              border: none;
+            "
+          >
+            Save 17%
+          </span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.25rem">
+          <span style="font-size: 1rem; font-weight: 500">Yearly</span>
+          <span style="font-size: 0.875rem; color: var(--muted-foreground)">USD 200.00/year + tax</span>
+        </div>
+      </label>
+    </div>
+  </preview>
+
+  <h3>Disabled</h3>
+  <preview>
+    <div class="radio-group" style="flex-direction: column">
+      <label class="radio-label">
+        <input type="radio" class="radio" name="dis-theme" value="light" checked disabled />
+        <span>Light Theme</span>
+      </label>
+      <label class="radio-label">
+        <input type="radio" class="radio" name="dis-theme" value="dark" disabled />
+        <span>Dark Theme</span>
+      </label>
+    </div>
+  </preview>
+</section>

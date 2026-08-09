@@ -1,0 +1,32 @@
+<section id="installation" class="section">
+  <h2>Installation</h2>
+  <p class="section-meta">
+    Include the library in your project by copying the components or referencing compiled bundles.
+  </p>
+
+  <h3>1. Add files</h3>
+  <pre
+    data-label="HTML"
+  ><code class="language-html">&lt;link rel="stylesheet" href="path/to/components/index.css"&gt;
+&lt;script type="module" src="path/to/components/index.js"&gt;&lt;/script&gt;</code></pre>
+
+  <h3>2. Minified Bundles (optional)</h3>
+  <p>
+    For production, you can compile and reference minified bundles (
+    <code>index.min.js</code>
+    and
+    <code>index.min.css</code>
+    ) using
+    <strong>esbuild</strong>
+    :
+  </p>
+  <pre
+    data-label="Bash"
+  ><code class="language-bash">npx esbuild components/index.js --bundle --minify --format=esm --outfile=index.min.js
+npx esbuild components/index.css --bundle --minify --outfile=index.min.css</code></pre>
+  <p style="margin-top: 1rem">Then include the minified outputs in your HTML:</p>
+  <pre
+    data-label="HTML"
+  ><code class="language-html">&lt;link rel="stylesheet" href="path/to/index.min.css"&gt;
+&lt;script type="module" src="path/to/index.min.js"&gt;&lt;/script&gt;</code></pre>
+</section>

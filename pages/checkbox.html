@@ -1,0 +1,130 @@
+<section id="checkbox" class="section">
+  <h2>Checkbox</h2>
+  <p class="section-meta">A control that allows the user to toggle between checked and not checked.</p>
+
+  <!-- Default -->
+  <preview>
+    <div style="display: flex; align-items: center">
+      <input type="checkbox" id="cb-1" class="checkbox" />
+      <label for="cb-1" class="label">Accept terms and conditions</label>
+    </div>
+  </preview>
+
+  <!-- Checked -->
+  <h3>Checked</h3>
+  <preview>
+    <div style="display: flex; align-items: center">
+      <input type="checkbox" id="cb-2" class="checkbox" checked />
+      <label for="cb-2" class="label">Remember me on this device</label>
+    </div>
+  </preview>
+
+  <!-- Disabled -->
+  <h3>Disabled</h3>
+  <preview>
+    <div style="display: flex; flex-direction: column; gap: 0.5rem">
+      <div style="display: flex; align-items: center">
+        <input type="checkbox" id="cb-3" class="checkbox" disabled />
+        <label for="cb-3" class="label">Public profile</label>
+      </div>
+      <div style="display: flex; align-items: center">
+        <input type="checkbox" id="cb-4" class="checkbox" disabled checked />
+        <label for="cb-4" class="label">Email notifications</label>
+      </div>
+    </div>
+  </preview>
+
+  <!-- With Text -->
+  <h3>Checkbox Description</h3>
+  <preview>
+    <div
+      style="display: grid; grid-template-columns: auto 1fr; gap: 0.5rem 0.75rem; align-items: start; max-width: 300px"
+    >
+      <input type="checkbox" id="cb-5" class="checkbox" style="margin-top: 2px" />
+      <div>
+        <label for="cb-5" class="label" style="display: block; margin-bottom: 0.25rem">
+          Opt-in to experimental features
+        </label>
+        <p style="margin: 0; font-size: 0.75rem; color: var(--muted-foreground)">
+          Get early access to beta features. These may be unstable and could affect your workflow.
+        </p>
+      </div>
+    </div>
+  </preview>
+
+  <!-- In a Form (card context) -->
+  <h3>Card Integration</h3>
+  <preview>
+    <div class="card" style="width: 350px">
+      <div class="card-header">
+        <div class="card-title">Notifications</div>
+        <div class="card-description">Choose how you want to be notified.</div>
+      </div>
+      <div class="card-content" style="display: flex; flex-direction: column; gap: 1rem">
+        <div style="display: flex; align-items: center; gap: 0.5rem">
+          <input type="checkbox" id="cb-app" class="checkbox" checked />
+          <label for="cb-app" class="label">Mobile App</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem">
+          <input type="checkbox" id="cb-browser" class="checkbox" />
+          <label for="cb-browser" class="label">Browser Push</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem">
+          <input type="checkbox" id="cb-email" class="checkbox" checked />
+          <label for="cb-email" class="label">Email Digest</label>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn">Save Preferences</button>
+      </div>
+    </div>
+  </preview>
+
+  <h3>Checkbox Card</h3>
+  <p class="section-meta">Card-style selection where the wrapper acts as a clickable card pattern.</p>
+  <style>
+    .checkbox-card-showcase {
+      background-color: var(--background);
+      transition:
+        border-color 100ms ease,
+        background-color 100ms ease;
+    }
+
+    .checkbox-card-showcase:has(.checkbox:checked) {
+      border-color: var(--accent);
+      background-color: color-mix(in oklch, var(--accent) 15%, transparent);
+    }
+
+    .dark .checkbox-card-showcase:has(.checkbox:checked) {
+      background-color: color-mix(in oklch, var(--accent) 15%, transparent);
+    }
+  </style>
+  <preview>
+    <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 440px">
+      <label
+        class="card checkbox-card-showcase"
+        style="display: flex; flex-direction: row; align-items: flex-start; gap: 1rem; padding: 1rem; cursor: pointer"
+      >
+        <input type="checkbox" class="checkbox" checked style="margin-top: 0.125rem" />
+        <div style="display: flex; flex-direction: column; gap: 0.125rem">
+          <span style="font-size: 0.875rem; font-weight: 500; letter-spacing: -0.01em">Private Project</span>
+          <span style="font-size: 0.875rem; color: var(--muted-foreground)">
+            Only invited members can see this project.
+          </span>
+        </div>
+      </label>
+      <label
+        class="card checkbox-card-showcase"
+        style="display: flex; flex-direction: row; align-items: flex-start; gap: 1rem; padding: 1rem; cursor: pointer"
+      >
+        <input type="checkbox" class="checkbox" style="margin-top: 0.125rem" />
+        <div style="display: flex; flex-direction: column; gap: 0.125rem">
+          <span style="font-size: 0.875rem; font-weight: 500; letter-spacing: -0.01em">Search Indexing</span>
+          <span style="font-size: 0.875rem; color: var(--muted-foreground)">
+            Allow search engines to index your project pages.
+          </span>
+        </div>
+      </label>
+    </div>
+  </preview>
+</section>

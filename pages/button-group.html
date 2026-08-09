@@ -1,0 +1,130 @@
+<section id="button-group" class="section">
+  <h2>Button Group</h2>
+  <p class="section-meta">Groups related buttons with shared border radius.</p>
+
+  <preview>
+    <div class="btn-group">
+      <button class="btn btn-outline">Left</button>
+      <button class="btn btn-outline">Center</button>
+      <button class="btn btn-outline">Right</button>
+    </div>
+    <div class="btn-group radius-full">
+      <button class="btn btn-outline">View</button>
+      <button class="btn btn-outline">Edit</button>
+      <button class="btn btn-outline">Share</button>
+    </div>
+  </preview>
+
+  <h3>Icon Group</h3>
+  <preview>
+    <div class="btn-group">
+      <button class="btn btn-icon btn-outline" aria-label="Pause">
+        <i data-lucide="pause-circle"></i>
+      </button>
+      <button class="btn btn-icon btn-outline" aria-label="Play">
+        <i data-lucide="play-circle"></i>
+      </button>
+      <button class="btn btn-icon btn-outline" aria-label="Stop">
+        <i data-lucide="stop-circle"></i>
+      </button>
+    </div>
+    <div class="btn-group radius-full">
+      <button class="btn btn-icon btn-outline" aria-label="Refresh">
+        <i data-lucide="refresh-cw"></i>
+      </button>
+      <button class="btn btn-icon btn-outline" aria-label="Settings">
+        <i data-lucide="settings"></i>
+      </button>
+      <button class="btn btn-icon btn-outline" aria-label="Delete">
+        <i data-lucide="trash-2"></i>
+      </button>
+    </div>
+  </preview>
+
+  <h3>Sizes</h3>
+  <preview>
+    <div>
+      <div class="label-sm">XS</div>
+      <div class="btn-group">
+        <button class="btn btn-outline btn-xs">Text</button>
+        <button class="btn btn-outline btn-xs">HTML</button>
+      </div>
+    </div>
+    <div>
+      <div class="label-sm">Small</div>
+      <div class="btn-group">
+        <button class="btn btn-outline btn-sm">Day</button>
+        <button class="btn btn-outline btn-sm">Week</button>
+        <button class="btn btn-outline btn-sm">Month</button>
+      </div>
+    </div>
+    <div>
+      <div class="label-sm">Default</div>
+      <div class="btn-group">
+        <button class="btn btn-outline">Profile</button>
+        <button class="btn btn-outline">Account</button>
+        <button class="btn btn-outline">Privacy</button>
+      </div>
+    </div>
+    <div>
+      <div class="label-sm">Large</div>
+      <div class="btn-group">
+        <button class="btn btn-outline btn-lg">Free</button>
+        <button class="btn btn-outline btn-lg">Pro</button>
+        <button class="btn btn-outline btn-lg">Enterprise</button>
+      </div>
+    </div>
+    <div>
+      <div class="label-sm">XL</div>
+      <div class="btn-group">
+        <button class="btn btn-outline btn-xl">Confirm</button>
+        <button class="btn btn-outline btn-xl">Cancel</button>
+      </div>
+    </div>
+  </preview>
+
+  <h3>Vertical Group</h3>
+  <preview>
+    <div class="btn-group" aria-orientation="vertical">
+      <button class="btn btn-outline">Small</button>
+      <button class="btn btn-outline">Medium</button>
+      <button class="btn btn-outline">Large</button>
+    </div>
+    <div class="btn-group radius-full" aria-orientation="vertical">
+      <button class="btn btn-icon btn-outline" aria-label="Move Up">
+        <i data-lucide="chevron-up"></i>
+      </button>
+      <button class="btn btn-icon btn-outline" aria-label="Move Down">
+        <i data-lucide="chevron-down"></i>
+      </button>
+    </div>
+  </preview>
+
+  <h3>Group Dropdown</h3>
+  <preview>
+    <div class="btn-group">
+      <button class="btn btn-outline">Save Changes</button>
+      <button class="btn btn-outline">Preview</button>
+      <button
+        class="btn btn-outline"
+        popovertarget="bg-dropdown"
+        aria-haspopup="menu"
+        style="anchor-name: --bg-drop-anchor"
+      >
+        More Actions
+        <i data-lucide="chevron-down"></i>
+      </button>
+    </div>
+    <menu
+      id="bg-dropdown"
+      popover
+      class="dropdown"
+      data-placement="bottom-end"
+      role="menu"
+      style="position-anchor: --bg-drop-anchor"
+    >
+      <button class="menu-item" role="menuitem">Export</button>
+      <button class="menu-item" role="menuitem">Delete</button>
+    </menu>
+  </preview>
+</section>

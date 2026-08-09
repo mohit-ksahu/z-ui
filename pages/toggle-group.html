@@ -1,0 +1,190 @@
+<section id="toggle-group" class="section">
+  <h2>Toggle Group</h2>
+  <p class="section-meta">A set of two-state buttons that can be toggled on or off.</p>
+
+  <preview>
+    <div class="toggle-group" role="group" aria-label="View selection">
+      <input type="radio" name="tg-view" id="tg-view-grid" class="toggle-input" />
+      <label class="toggle" for="tg-view-grid"><i data-lucide="layout-grid"></i></label>
+      <input type="radio" name="tg-view" id="tg-view-list" class="toggle-input" checked />
+      <label class="toggle" for="tg-view-list"><i data-lucide="list"></i></label>
+      <input type="radio" name="tg-view" id="tg-view-table" class="toggle-input" />
+      <label class="toggle" for="tg-view-table"><i data-lucide="table-2"></i></label>
+    </div>
+  </preview>
+
+  <h3>Single Toggle</h3>
+  <p class="section-meta">
+    By default,
+    <code>toggle.js</code>
+    allows unselecting radio buttons. To enforce that at least one option remains selected (preventing unselection), add
+    the
+    <code>required</code>
+    attribute to your native radio inputs.
+  </p>
+  <preview>
+    <div class="toggle-group" role="group" aria-label="Enforced single selection">
+      <input type="radio" name="tg-enforced" id="tg-e-1" class="toggle-input" required checked />
+      <label class="toggle" for="tg-e-1">Option 1</label>
+
+      <input type="radio" name="tg-enforced" id="tg-e-2" class="toggle-input" required />
+      <label class="toggle" for="tg-e-2">Option 2</label>
+
+      <input type="radio" name="tg-enforced" id="tg-e-3" class="toggle-input" required />
+      <label class="toggle" for="tg-e-3">Option 3</label>
+    </div>
+  </preview>
+
+  <h3>Outline Group</h3>
+  <preview>
+    <div class="toggle-group gap-0" role="group" aria-label="Format selection">
+      <input type="radio" name="tg-fmt" id="tg-fmt-left" class="toggle-input" />
+      <label class="toggle toggle-outline" for="tg-fmt-left"><i data-lucide="align-left"></i></label>
+      <input type="radio" name="tg-fmt" id="tg-fmt-center" class="toggle-input" checked />
+      <label class="toggle toggle-outline" for="tg-fmt-center"><i data-lucide="align-center"></i></label>
+      <input type="radio" name="tg-fmt" id="tg-fmt-right" class="toggle-input" />
+      <label class="toggle toggle-outline" for="tg-fmt-right"><i data-lucide="align-right"></i></label>
+    </div>
+  </preview>
+
+  <h3>Text Group</h3>
+  <preview>
+    <div class="toggle-group" role="group" aria-label="Language selection">
+      <input type="checkbox" id="tg-lang-en" class="toggle-input" />
+      <label class="toggle" for="tg-lang-en">English</label>
+      <input type="checkbox" id="tg-lang-fr" class="toggle-input" checked />
+      <label class="toggle" for="tg-lang-fr">French</label>
+      <input type="checkbox" id="tg-lang-de" class="toggle-input" />
+      <label class="toggle" for="tg-lang-de">German</label>
+    </div>
+  </preview>
+
+  <h3>Group Sizes</h3>
+  <preview class="col">
+    <div class="toggle-group" role="group" aria-label="Size sm">
+      <input type="radio" name="tg-sm" id="tg-sm-s" class="toggle-input" />
+      <label class="toggle toggle-sm" for="tg-sm-s">S</label>
+      <input type="radio" name="tg-sm" id="tg-sm-m" class="toggle-input" checked />
+      <label class="toggle toggle-sm" for="tg-sm-m">M</label>
+      <input type="radio" name="tg-sm" id="tg-sm-l" class="toggle-input" />
+      <label class="toggle toggle-sm" for="tg-sm-l">L</label>
+    </div>
+    <div class="toggle-group" role="group" aria-label="Size default">
+      <input type="radio" name="tg-md" id="tg-md-s" class="toggle-input" />
+      <label class="toggle" for="tg-md-s">S</label>
+      <input type="radio" name="tg-md" id="tg-md-m" class="toggle-input" checked />
+      <label class="toggle" for="tg-md-m">M</label>
+      <input type="radio" name="tg-md" id="tg-md-l" class="toggle-input" />
+      <label class="toggle" for="tg-md-l">L</label>
+    </div>
+    <div class="toggle-group" role="group" aria-label="Size lg">
+      <input type="radio" name="tg-lg" id="tg-lg-s" class="toggle-input" />
+      <label class="toggle toggle-lg" for="tg-lg-s">S</label>
+      <input type="radio" name="tg-lg" id="tg-lg-m" class="toggle-input" checked />
+      <label class="toggle toggle-lg" for="tg-lg-m">M</label>
+      <input type="radio" name="tg-lg" id="tg-lg-l" class="toggle-input" />
+      <label class="toggle toggle-lg" for="tg-lg-l">L</label>
+    </div>
+  </preview>
+
+  <h3>Group Spacing</h3>
+  <preview>
+    <div class="toggle-group gap-0" role="group" aria-label="Style selection">
+      <input type="radio" name="tg-sp" id="tg-sp-1" class="toggle-input" />
+      <label class="toggle" for="tg-sp-1"><i data-lucide="bold"></i></label>
+      <input type="radio" name="tg-sp" id="tg-sp-2" class="toggle-input" checked />
+      <label class="toggle" for="tg-sp-2"><i data-lucide="italic"></i></label>
+      <input type="radio" name="tg-sp" id="tg-sp-3" class="toggle-input" />
+      <label class="toggle" for="tg-sp-3"><i data-lucide="underline"></i></label>
+    </div>
+  </preview>
+
+  <h3>Vertical Group</h3>
+  <preview>
+    <div class="toggle-group" aria-orientation="vertical" role="group" aria-label="Status selection">
+      <input type="radio" name="tg-vert" id="tg-vert-i" class="toggle-input" />
+      <label class="toggle" for="tg-vert-i">
+        <i data-lucide="circle-check"></i>
+        Active
+      </label>
+      <input type="radio" name="tg-vert" id="tg-vert-w" class="toggle-input" checked />
+      <label class="toggle" for="tg-vert-w">
+        <i data-lucide="circle-dashed"></i>
+        Pending
+      </label>
+      <input type="radio" name="tg-vert" id="tg-vert-e" class="toggle-input" />
+      <label class="toggle" for="tg-vert-e">
+        <i data-lucide="circle-x"></i>
+        Inactive
+      </label>
+    </div>
+  </preview>
+
+  <h3>Disabled</h3>
+  <preview>
+    <div class="toggle-group" role="group" aria-label="Disabled selection">
+      <input type="radio" name="tg-dis" id="tg-dis-1" class="toggle-input" disabled />
+      <label class="toggle" for="tg-dis-1"><i data-lucide="moon"></i></label>
+      <input type="radio" name="tg-dis" id="tg-dis-2" class="toggle-input" checked disabled />
+      <label class="toggle" for="tg-dis-2"><i data-lucide="sun"></i></label>
+      <input type="radio" name="tg-dis" id="tg-dis-3" class="toggle-input" disabled />
+      <label class="toggle" for="tg-dis-3"><i data-lucide="cloud"></i></label>
+    </div>
+  </preview>
+
+  <h3>Custom Group</h3>
+  <p class="section-meta">A custom toggle group example.</p>
+  <style>
+    .tier-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .tier-toggle {
+      height: 4.5rem;
+      width: 4.5rem;
+      flex-direction: column;
+      gap: 0.375rem;
+      padding: 0;
+    }
+
+    .tier-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .tier-label {
+      font-size: 0.75rem;
+      color: var(--muted-foreground);
+      font-weight: 400;
+    }
+  </style>
+  <preview>
+    <div class="tier-container">
+      <div style="font-weight: 500; font-size: 0.875rem">Project Tier</div>
+      <div class="toggle-group" style="gap: 0.5rem" role="group" aria-label="Project Tier">
+        <input type="radio" name="tg-tier" id="tg-tier-l" class="toggle-input" />
+        <label class="toggle toggle-outline tier-toggle" for="tg-tier-l">
+          <i data-lucide="user" class="tier-icon"></i>
+          <span class="tier-label">Basic</span>
+        </label>
+
+        <input type="radio" name="tg-tier" id="tg-tier-n" class="toggle-input" checked />
+        <label class="toggle toggle-outline tier-toggle" for="tg-tier-n">
+          <i data-lucide="users" class="tier-icon"></i>
+          <span class="tier-label">Team</span>
+        </label>
+
+        <input type="radio" name="tg-tier" id="tg-tier-b" class="toggle-input" />
+        <label class="toggle toggle-outline tier-toggle" for="tg-tier-b">
+          <i data-lucide="building" class="tier-icon"></i>
+          <span class="tier-label">Enterprise</span>
+        </label>
+      </div>
+      <div style="font-size: 0.875rem; color: var(--muted-foreground)">
+        Select a tier optimized for your team's needs.
+      </div>
+    </div>
+  </preview>
+</section>

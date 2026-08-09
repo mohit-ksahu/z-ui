@@ -1,0 +1,45 @@
+<section id="slider" class="section">
+  <h2>Slider</h2>
+  <p class="section-meta">An input where the user selects a value from within a given range.</p>
+
+  <preview>
+    <div style="width: 100%; max-width: 320px">
+      <label class="label" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem">
+        Volume
+        <span>50%</span>
+      </label>
+      <input
+        type="range"
+        class="slider"
+        min="0"
+        max="100"
+        value="50"
+        style="width: 100%; --val: 50%"
+        oninput="
+          this.style.setProperty('--val', this.valueAsNumber + '%');
+          this.previousElementSibling.querySelector('span').innerText = this.value + '%';
+        "
+      />
+    </div>
+  </preview>
+
+  <h3>Disabled</h3>
+  <preview>
+    <div style="width: 100%; max-width: 320px">
+      <label class="label" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; opacity: 0.5">
+        Brightness
+        <span>32%</span>
+      </label>
+      <input
+        type="range"
+        class="slider"
+        min="0"
+        max="100"
+        value="32"
+        disabled
+        style="width: 100%; --val: 32%"
+        oninput="this.style.setProperty('--val', this.valueAsNumber + '%')"
+      />
+    </div>
+  </preview>
+</section>

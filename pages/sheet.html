@@ -1,0 +1,124 @@
+<section id="sheet" class="section">
+  <h2>Sheet</h2>
+  <p class="section-meta">Slide-in panel from any edge. Extends dialog styles.</p>
+
+  <h3>Top Sheet</h3>
+  <p class="section-meta">A sheet that slides in from the top of the viewport.</p>
+  <preview>
+    <button class="btn btn-outline" commandfor="sheet-top" command="show-modal">Open Top Sheet</button>
+    <dialog id="sheet-top" class="dialog sheet sheet-side-top" onclick="if (event.target === this) this.close();">
+      <button class="btn btn-ghost btn-icon-sm sheet-close" commandfor="sheet-top" command="close" aria-label="Close">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="sheet-header">
+        <p class="sheet-title">Global Search</p>
+        <p class="sheet-description">Search projects, files, or documentation.</p>
+      </div>
+      <div class="sheet-content" style="display: flex; flex-direction: column; gap: 1rem">
+        <input type="text" class="input" placeholder="Search..." />
+      </div>
+    </dialog>
+  </preview>
+
+  <h3>Right Sheet</h3>
+  <p class="section-meta">A sheet that slides in from the right of the viewport. This is the default placement.</p>
+  <preview>
+    <button class="btn btn-outline" commandfor="sheet-right" command="show-modal">Open Right Sheet</button>
+    <dialog id="sheet-right" class="dialog sheet sheet-side-right" onclick="if (event.target === this) this.close();">
+      <button class="btn btn-ghost btn-icon-sm sheet-close" commandfor="sheet-right" command="close" aria-label="Close">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="sheet-header">
+        <p class="sheet-title">Edit Profile</p>
+        <p class="sheet-description">Update your personal information and preferences.</p>
+      </div>
+      <div class="sheet-content" style="display: flex; flex-direction: column; gap: 1.5rem">
+        <div style="display: flex; flex-direction: column; gap: 0.5rem">
+          <label class="label">Display Name</label>
+          <input type="text" class="input" placeholder="e.g. Alex" value="Alex" />
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem">
+          <label class="label">Bio</label>
+          <textarea class="textarea" placeholder="Tell us about yourself..."></textarea>
+        </div>
+      </div>
+      <div class="sheet-footer">
+        <button class="btn" style="width: 100%" commandfor="sheet-right" command="close">Save Changes</button>
+      </div>
+    </dialog>
+  </preview>
+
+  <h3>Bottom Sheet</h3>
+  <p class="section-meta">A sheet that slides in from the bottom of the viewport.</p>
+  <preview>
+    <button class="btn btn-outline" commandfor="sheet-bottom" command="show-modal">Open Bottom Sheet</button>
+    <dialog id="sheet-bottom" class="dialog sheet sheet-side-bottom" onclick="if (event.target === this) this.close();">
+      <button
+        class="btn btn-ghost btn-icon-sm sheet-close"
+        commandfor="sheet-bottom"
+        command="close"
+        aria-label="Close"
+      >
+        <i data-lucide="x"></i>
+      </button>
+      <div class="sheet-header">
+        <p class="sheet-title">Project Actions</p>
+        <p class="sheet-description">Manage the current task workflow.</p>
+      </div>
+      <div class="sheet-content" style="flex-direction: row; flex-wrap: wrap">
+        <button class="btn btn-outline" style="flex: 1; min-width: 120px" commandfor="sheet-bottom" command="close">
+          <i data-lucide="archive" style="width: 16px; height: 16px; margin-right: 0.5rem"></i>
+          Archive
+        </button>
+        <button class="btn btn-primary" style="flex: 1; min-width: 120px" commandfor="sheet-bottom" command="close">
+          <i data-lucide="check" style="width: 16px; height: 16px; margin-right: 0.5rem"></i>
+          Complete
+        </button>
+      </div>
+    </dialog>
+  </preview>
+
+  <h3>Left Sheet</h3>
+  <p class="section-meta">A sheet that slides in from the left of the viewport.</p>
+  <preview>
+    <button class="btn btn-outline" commandfor="sheet-left" command="show-modal">Open Left Sheet</button>
+    <dialog id="sheet-left" class="dialog sheet sheet-side-left" onclick="if (event.target === this) this.close();">
+      <button class="btn btn-ghost btn-icon-sm sheet-close" commandfor="sheet-left" command="close" aria-label="Close">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="sheet-header">
+        <p class="sheet-title">Main Menu</p>
+        <p class="sheet-description">Access different sections of the application.</p>
+      </div>
+      <nav class="sheet-content">
+        <a href="#" class="btn btn-ghost" style="gap: 0.5rem; justify-content: flex-start">
+          <i data-lucide="home" style="width: 16px; height: 16px"></i>
+          Dashboard
+        </a>
+        <a href="#" class="btn btn-ghost" style="gap: 0.5rem; justify-content: flex-start">
+          <i data-lucide="folder" style="width: 16px; height: 16px"></i>
+          Projects
+        </a>
+        <a href="#" class="btn btn-ghost" style="gap: 0.5rem; justify-content: flex-start">
+          <i data-lucide="users" style="width: 16px; height: 16px"></i>
+          Team
+        </a>
+        <div class="separator" style="margin: calc(var(--spacing) * 2) 0"></div>
+        <a href="#" class="btn btn-ghost" style="gap: 0.5rem; justify-content: flex-start">
+          <i data-lucide="settings" style="width: 16px; height: 16px"></i>
+          Settings
+        </a>
+      </nav>
+    </dialog>
+  </preview>
+
+  <h2>Usage</h2>
+  <pre data-label="HTML"><code class="language-html">&lt;!-- Trigger --&gt;
+&lt;button commandfor="my-sheet" command="show-modal"&gt;Open Sheet&lt;/button&gt;
+
+&lt;!-- Sheet --&gt;
+&lt;dialog id="my-sheet" class="dialog sheet sheet-side-right"&gt;
+  &lt;!-- Content --&gt;
+  &lt;button commandfor="my-sheet" command="close"&gt;Close&lt;/button&gt;
+&lt;/dialog&gt;</code></pre>
+</section>

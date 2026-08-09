@@ -1,0 +1,54 @@
+<section id="card" class="section">
+  <h2>Card</h2>
+  <p class="section-meta">Displays a card with header, content, and footer.</p>
+
+  <preview>
+    <div class="card" style="width: 380px">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Create Project</div>
+          <div class="card-description">Deploy your new project to the cloud.</div>
+        </div>
+        <div class="card-action">
+          <button class="btn btn-ghost btn-sm btn-icon" aria-label="Settings">
+            <i data-lucide="settings"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-content" style="display: flex; flex-direction: column; gap: 1.25rem">
+        <div style="display: flex; flex-direction: column; gap: 0.375rem">
+          <label for="k-name" class="label">Project Name</label>
+          <input id="k-name" class="input" placeholder="e.g. Portfolio Website" />
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.375rem">
+          <label for="k-status" class="label">Project Status</label>
+          <select class="select" id="k-status">
+            <button>
+              <selectedcontent></selectedcontent>
+              <i data-lucide="chevron-down" class="select-indicator"></i>
+            </button>
+            <option value="" disabled selected hidden>Select status</option>
+            <option value="active">Active</option>
+            <option value="pending">Pending</option>
+            <option value="archived">Archived</option>
+          </select>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 1rem; margin-top: 0.25rem">
+          <input type="checkbox" role="switch" class="switch" id="k-prod" checked />
+          <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.125rem">
+            <label for="k-prod" style="font-size: 0.875rem; font-weight: 500; line-height: 1.2; cursor: pointer">
+              Deploy to Production
+            </label>
+            <div style="font-size: 0.75rem; color: var(--muted-foreground)">
+              Automatically release build updates to server.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer" style="justify-content: space-between">
+        <button class="btn btn-outline">Cancel</button>
+        <button class="btn">Deploy Project</button>
+      </div>
+    </div>
+  </preview>
+</section>

@@ -1,0 +1,162 @@
+<section id="accordion" class="section">
+  <h2>Accordion</h2>
+  <p class="section-meta">A vertically stacked set of interactive headings that each reveal a section of content.</p>
+
+  <!-- Basic (Single) -->
+  <h3>Basic</h3>
+  <p class="section-meta">
+    By default, only one item can be open at a time using the
+    <code>name</code>
+    attribute.
+  </p>
+  <preview>
+    <div style="width: 100%; max-width: 480px">
+      <details class="accordion" name="basic-acc" open>
+        <summary class="accordion-trigger">
+          Is it accessible?
+          <i data-lucide="plus" class="accordion-icon accordion-collapsed-only"></i>
+          <i data-lucide="minus" class="accordion-icon accordion-expanded-only"></i>
+        </summary>
+        <div class="accordion-content">
+          Yes. It adheres to the WAI-ARIA design pattern and uses semantic HTML elements.
+        </div>
+      </details>
+      <details class="accordion" name="basic-acc">
+        <summary class="accordion-trigger">
+          Is it styled?
+          <i data-lucide="plus" class="accordion-icon accordion-collapsed-only"></i>
+          <i data-lucide="minus" class="accordion-icon accordion-expanded-only"></i>
+        </summary>
+        <div class="accordion-content">
+          Yes. It comes with default styles that match the rest of the components' aesthetic.
+        </div>
+      </details>
+      <details class="accordion" name="basic-acc">
+        <summary class="accordion-trigger">
+          Is it animated?
+          <i data-lucide="plus" class="accordion-icon accordion-collapsed-only"></i>
+          <i data-lucide="minus" class="accordion-icon accordion-expanded-only"></i>
+        </summary>
+        <div class="accordion-content">Yes. It uses smooth transitions when opening and closing sections.</div>
+      </details>
+    </div>
+  </preview>
+
+  <!-- Multiple -->
+  <h3>Multiple</h3>
+  <p class="section-meta">
+    Remove the
+    <code>name</code>
+    attribute to allow multiple items to be open at once.
+  </p>
+  <preview>
+    <div style="width: 100%; max-width: 480px">
+      <details class="accordion">
+        <summary class="accordion-trigger">
+          Enable notifications?
+          <i data-lucide="plus" class="accordion-icon accordion-collapsed-only"></i>
+          <i data-lucide="minus" class="accordion-icon accordion-expanded-only"></i>
+        </summary>
+        <div class="accordion-content">Receive real-time alerts about account activity and updates.</div>
+      </details>
+      <details class="accordion">
+        <summary class="accordion-trigger">
+          Use dark mode?
+          <i data-lucide="plus" class="accordion-icon accordion-collapsed-only"></i>
+          <i data-lucide="minus" class="accordion-icon accordion-expanded-only"></i>
+        </summary>
+        <div class="accordion-content">Switch between light and dark themes based on your preference.</div>
+      </details>
+    </div>
+  </preview>
+
+  <!-- Disabled -->
+  <h3>Disabled</h3>
+  <p class="section-meta">
+    Use the
+    <code>aria-disabled="true"</code>
+    attribute to disable individual items.
+  </p>
+  <preview>
+    <div style="width: 100%; max-width: 480px">
+      <details class="accordion">
+        <summary class="accordion-trigger">
+          Supported features
+          <i data-lucide="plus" class="accordion-icon accordion-collapsed-only"></i>
+          <i data-lucide="minus" class="accordion-icon accordion-expanded-only"></i>
+        </summary>
+        <div class="accordion-content">The library supports over 36 components with full documentation.</div>
+      </details>
+      <details class="accordion" aria-disabled="true">
+        <summary class="accordion-trigger">
+          Premium themes
+          <i data-lucide="plus" class="accordion-icon accordion-collapsed-only"></i>
+          <i data-lucide="minus" class="accordion-icon accordion-expanded-only"></i>
+        </summary>
+        <div class="accordion-content">Custom branded themes are available in the advanced package.</div>
+      </details>
+    </div>
+  </preview>
+
+  <!-- Borders (Custom Pattern) -->
+  <h3>Borders</h3>
+  <p class="section-meta">Achieved by wrapping items in a custom container with border styling.</p>
+  <preview>
+    <div style="width: 100%; max-width: 480px">
+      <div style="border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 0 1rem">
+        <details class="accordion" name="border-acc">
+          <summary class="accordion-trigger">
+            Project Overview
+            <i data-lucide="plus" class="accordion-icon accordion-collapsed-only"></i>
+            <i data-lucide="minus" class="accordion-icon accordion-expanded-only"></i>
+          </summary>
+          <div class="accordion-content">View general statistics and progress for your current project.</div>
+        </details>
+        <details class="accordion" name="border-acc">
+          <summary class="accordion-trigger">
+            Member Settings
+            <i data-lucide="plus" class="accordion-icon accordion-collapsed-only"></i>
+            <i data-lucide="minus" class="accordion-icon accordion-expanded-only"></i>
+          </summary>
+          <div class="accordion-content">Manage permissions and roles for your team members.</div>
+        </details>
+      </div>
+    </div>
+  </preview>
+
+  <!-- Card -->
+  <h3>Accordion Card</h3>
+  <p class="section-meta">
+    Accordion can be placed inside a
+    <code>.card</code>
+    component.
+  </p>
+  <preview>
+    <div style="width: 100%; max-width: 480px">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Settings</h4>
+          <p class="card-description">Manage your account preferences and security settings.</p>
+        </div>
+        <div class="card-content">
+          <details class="accordion" name="card-acc">
+            <summary class="accordion-trigger">
+              Security
+              <i data-lucide="plus" class="accordion-icon accordion-collapsed-only"></i>
+              <i data-lucide="minus" class="accordion-icon accordion-expanded-only"></i>
+            </summary>
+            <div class="accordion-content">Update your password and enable two-factor authentication.</div>
+          </details>
+          <details class="accordion" name="card-acc">
+            <summary class="accordion-trigger">
+              Privacy
+              <i data-lucide="plus" class="accordion-icon accordion-collapsed-only"></i>
+              <i data-lucide="minus" class="accordion-icon accordion-expanded-only"></i>
+            </summary>
+            <div class="accordion-content">Control how your data is shared and used across the platform.</div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </preview>
+</section>

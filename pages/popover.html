@@ -1,0 +1,108 @@
+<section id="popover" class="section">
+  <h2>Popover</h2>
+  <p class="section-meta">Floating panel anchored to a trigger using native Popover and CSS Anchor Positioning APIs.</p>
+
+  <h3>Basic</h3>
+  <preview style="padding: 4rem 1rem">
+    <button popovertarget="p-basic" class="btn btn-outline" style="anchor-name: --a-basic">View Profile</button>
+    <div id="p-basic" popover class="popover" data-placement="bottom-start" style="position-anchor: --a-basic">
+      <p style="margin: 0">Profile updated successfully.</p>
+    </div>
+  </preview>
+
+  <h3>Popover Form</h3>
+  <p class="section-meta">Popovers can contain complex forms and structured content.</p>
+  <preview style="padding: 4rem 1rem">
+    <button popovertarget="p-form" class="btn btn-outline" style="anchor-name: --a-form">Quick Settings</button>
+    <div id="p-form" popover class="popover" data-placement="bottom-start" style="position-anchor: --a-form">
+      <header class="popover-header">
+        <h4 class="popover-title">Dimensions</h4>
+        <p class="popover-description">Set the default size for your project.</p>
+      </header>
+      <div style="height: 1px; background: var(--border); margin: 0 -0.625rem"></div>
+      <div style="display: grid; gap: 0.75rem; padding-top: 0.25rem">
+        <div style="align-items: center; gap: 1rem">
+          <label class="label">Width (px)</label>
+          <input class="input" type="number" value="1200" />
+        </div>
+        <div style="align-items: center; gap: 1rem">
+          <label class="label">Height (px)</label>
+          <input class="input" type="number" value="800" />
+        </div>
+        <div style="align-items: center; gap: 1rem">
+          <label class="label">Padding</label>
+          <input class="input" value="20px" />
+        </div>
+      </div>
+      <div style="margin-top: 0.75rem">
+        <button class="btn btn-sm btn-primary" style="width: 100%">Apply</button>
+      </div>
+    </div>
+  </preview>
+
+  <h3>Placements</h3>
+  <p class="section-meta">
+    Use the
+    <code>data-placement</code>
+    attribute to dictate explicit edge and placement pinning.
+  </p>
+  <preview style="gap: 1rem; flex-wrap: wrap; justify-content: center; padding: 2rem">
+    <button popovertarget="p-placed-bottom" class="btn btn-outline" style="anchor-name: --p-placed-bottom">
+      Bottom
+    </button>
+    <div
+      id="p-placed-bottom"
+      popover
+      class="popover"
+      data-placement="bottom"
+      style="position-anchor: --p-placed-bottom; width: auto"
+    >
+      <div class="popover-title">Bottom Placement</div>
+      <p style="margin: 0.5rem 0 0; font-size: 0.875rem; color: var(--muted-foreground)">
+        This popover opens below the trigger.
+      </p>
+    </div>
+
+    <button popovertarget="p-placed-top" class="btn btn-outline" style="anchor-name: --p-placed-top">Top</button>
+    <div
+      id="p-placed-top"
+      popover
+      class="popover"
+      data-placement="top"
+      style="position-anchor: --p-placed-top; width: auto"
+    >
+      <div class="popover-title">Top Placement</div>
+      <p style="margin: 0.5rem 0 0; font-size: 0.875rem; color: var(--muted-foreground)">
+        This popover opens above the trigger.
+      </p>
+    </div>
+
+    <button popovertarget="p-placed-left" class="btn btn-outline" style="anchor-name: --p-placed-left">Left</button>
+    <div
+      id="p-placed-left"
+      popover
+      class="popover"
+      data-placement="left"
+      style="position-anchor: --p-placed-left; width: auto"
+    >
+      <div class="popover-title">Left Placement</div>
+      <p style="margin: 0.5rem 0 0; font-size: 0.875rem; color: var(--muted-foreground)">
+        This popover opens to the left of the trigger.
+      </p>
+    </div>
+
+    <button popovertarget="p-placed-right" class="btn btn-outline" style="anchor-name: --p-placed-right">Right</button>
+    <div
+      id="p-placed-right"
+      popover
+      class="popover"
+      data-placement="right"
+      style="position-anchor: --p-placed-right; width: auto"
+    >
+      <div class="popover-title">Right Placement</div>
+      <p style="margin: 0.5rem 0 0; font-size: 0.875rem; color: var(--muted-foreground)">
+        This popover opens to the right of the trigger.
+      </p>
+    </div>
+  </preview>
+</section>

@@ -1,0 +1,239 @@
+<section id="input-group" class="section">
+  <h2>Input Group</h2>
+  <p class="section-meta">A group of related inputs and addons, useful for combining labels, icons, and actions.</p>
+
+  <!-- Icon -->
+  <h3>Addon Icons</h3>
+  <preview style="max-width: 24rem">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i data-lucide="search"></i>
+      </div>
+      <input type="text" class="input" placeholder="Search website..." />
+    </div>
+    <div class="input-group">
+      <input type="text" class="input" placeholder="Username" />
+      <div class="input-group-addon">
+        <i data-lucide="user"></i>
+      </div>
+    </div>
+  </preview>
+
+  <!-- Text -->
+  <h3>Text Addons</h3>
+  <preview style="max-width: 24rem">
+    <div class="input-group">
+      <div class="input-group-addon">https://</div>
+      <input type="text" class="input" placeholder="example.com" />
+    </div>
+    <div class="input-group">
+      <input type="text" class="input" placeholder="user-id" />
+      <div class="input-group-addon">@domain.com</div>
+    </div>
+  </preview>
+
+  <!-- Button -->
+  <h3>Button Addons</h3>
+  <preview style="max-width: 24rem">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <button class="btn btn-secondary">Copy Link</button>
+      </div>
+      <input type="text" class="input" value="https://example.com/share/unique-id" readonly />
+    </div>
+    <div class="input-group">
+      <input type="text" class="input" placeholder="Enter website URL" />
+      <div class="input-group-addon">
+        <button class="btn btn-primary">Connect</button>
+      </div>
+    </div>
+    <div class="input-group">
+      <input type="text" class="input" placeholder="Filter items..." />
+      <div class="input-group-addon">
+        <button class="btn btn-ghost btn-icon" aria-label="Filter">
+          <i data-lucide="filter"></i>
+        </button>
+      </div>
+    </div>
+  </preview>
+
+  <!-- Kbd -->
+  <h3>Kbd Addon</h3>
+  <preview style="max-width: 24rem">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i data-lucide="help-circle"></i>
+      </div>
+      <input type="text" class="input" placeholder="Search help articles..." />
+      <div class="input-group-addon">
+        <kbd class="kbd">
+          <i data-lucide="command"></i>
+          K
+        </kbd>
+      </div>
+    </div>
+  </preview>
+
+  <!-- Dropdown -->
+  <h3>Dropdown Addon</h3>
+  <preview style="padding-bottom: 6rem">
+    <div class="input-group" style="width: 380px; anchor-name: --dd-ig-1">
+      <div class="input-group-addon">
+        <button class="btn btn-secondary" popovertarget="dd-ig-1">
+          Method
+          <i data-lucide="chevron-down"></i>
+        </button>
+        <menu id="dd-ig-1" popover class="dropdown" style="position-anchor: --dd-ig-1" data-placement="bottom-start">
+          <button class="menu-item" role="menuitem">GET</button>
+          <button class="menu-item" role="menuitem">POST</button>
+          <button class="menu-item" role="menuitem">PUT</button>
+          <button class="menu-item" role="menuitem">DELETE</button>
+        </menu>
+      </div>
+      <input type="text" class="input" placeholder="/api/v1/users" />
+    </div>
+  </preview>
+
+  <!-- Select Addon -->
+  <h3>Select Addon</h3>
+  <preview style="max-width: 24rem">
+    <div class="input-group">
+      <select class="select" style="width: 5.5rem">
+        <button>
+          <selectedcontent></selectedcontent>
+          <i data-lucide="chevron-down" class="select-indicator"></i>
+        </button>
+        <option value="usd" selected>USD</option>
+        <option value="eur">EUR</option>
+        <option value="gbp">GBP</option>
+      </select>
+      <input type="number" class="input" placeholder="0.00" />
+    </div>
+    <div class="input-group">
+      <input type="text" class="input" placeholder="Search database..." />
+      <select class="select">
+        <button>
+          <selectedcontent></selectedcontent>
+          <i data-lucide="chevron-down" class="select-indicator"></i>
+        </button>
+        <option value="all" selected>All</option>
+        <option value="docs">Docs</option>
+        <option value="files">Files</option>
+      </select>
+    </div>
+  </preview>
+
+  <!-- Spinner -->
+  <h3>Spinner Addon</h3>
+  <preview style="max-width: 24rem">
+    <div class="input-group">
+      <input type="text" class="input" placeholder="Validating connection..." />
+      <div class="input-group-addon">
+        <div class="spinner spinner-xs"></div>
+      </div>
+    </div>
+  </preview>
+
+  <!-- Textarea -->
+  <h3>Textarea Addon</h3>
+  <style>
+    .editor-showcase {
+      height: auto !important;
+      flex-direction: column;
+      border-color: var(--border);
+    }
+
+    .editor-header,
+    .editor-footer {
+      width: 100%;
+      padding-inline: 1rem !important;
+      padding-block: 0.5rem !important;
+    }
+
+    .editor-header {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .editor-footer {
+      border-top: 1px solid var(--border);
+    }
+
+    .editor-showcase:has(.textarea:focus-visible) {
+      border-color: var(--border);
+    }
+  </style>
+  <preview>
+    <div class="input-group editor-showcase">
+      <!-- Header -->
+      <div class="input-group-addon editor-header" style="justify-content: space-between">
+        <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--muted-foreground)">
+          <i style="width: 1rem; height: 1rem" data-lucide="file-text"></i>
+          <span style="font-family: ui-monospace, monospace">notes.txt</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.25rem">
+          <button class="btn btn-ghost btn-icon-xs" style="color: var(--muted-foreground)">
+            <i data-lucide="edit-3"></i>
+          </button>
+          <button class="btn btn-ghost btn-icon-xs" style="color: var(--muted-foreground)">
+            <i data-lucide="save"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Editor Area -->
+      <textarea
+        class="textarea"
+        style="
+          padding: 1rem;
+          font-family: ui-monospace, monospace;
+          font-size: 0.875rem;
+          line-height: 1.6;
+          min-height: 240px;
+          background: transparent;
+        "
+        spellcheck="false"
+      >
+Dear Team,
+
+I've updated the project roadmap for Q3. 
+Please review the latest design changes and provide feedback.
+
+- New landing page
+- Improved onboarding
+- Refined typography
+
+Best,
+Alex</textarea>
+
+      <!-- Footer -->
+      <div class="input-group-addon editor-footer" style="justify-content: space-between">
+        <span style="font-size: 0.75rem; color: var(--muted-foreground); font-family: ui-monospace, monospace">
+          Markdown
+        </span>
+        <button class="btn btn-primary btn-sm" style="display: flex; align-items: center; gap: 0.5rem">
+          Save Changes
+          <i style="width: 0.875rem; height: 0.875rem" data-lucide="check"></i>
+        </button>
+      </div>
+    </div>
+  </preview>
+
+  <!-- Custom Input -->
+  <h3>Addon Combinations</h3>
+  <preview style="max-width: 24rem">
+    <div class="input-group">
+      <div class="input-group-addon"><i data-lucide="user"></i></div>
+      <input type="text" class="input" placeholder="u-xxxxxxxxxx" />
+      <div class="input-group-addon">User</div>
+    </div>
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i data-lucide="credit-card"></i>
+      </div>
+      <input type="number" class="input" placeholder="100.00" />
+      <div class="input-group-addon">
+        <span style="font-size: 0.75rem; font-weight: 600; color: var(--muted-foreground)">USD</span>
+      </div>
+    </div>
+  </preview>
+</section>

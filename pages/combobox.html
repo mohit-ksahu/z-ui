@@ -1,0 +1,347 @@
+<section id="combobox" class="section">
+  <h2>Combobox</h2>
+  <p class="section-meta">Autocomplete input and command palette with a list of suggestions.</p>
+
+  <h3>Basic</h3>
+  <p class="section-meta">A combobox acting as a select with search capabilities.</p>
+  <preview style="padding: 4rem 1rem">
+    <!-- Trigger Button -->
+    <button popovertarget="combo-lang" class="combobox-trigger" style="width: 200px; anchor-name: --a-combo-lang">
+      <span class="combobox-value">Select project...</span>
+      <i data-lucide="chevrons-up-down" style="width: 1rem; height: 1rem; opacity: 0.5"></i>
+    </button>
+
+    <!-- Popover Content -->
+    <div
+      id="combo-lang"
+      popover
+      class="popover combobox-popover"
+      data-placement="bottom-start"
+      style="position-anchor: --a-combo-lang"
+    >
+      <div class="combobox-search">
+        <i data-lucide="search"></i>
+        <input type="text" class="combobox-input" placeholder="Search project..." />
+      </div>
+      <div class="combobox-content">
+        <div class="combobox-empty">No project found.</div>
+        <div class="combobox-item" data-value="documentation">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          Documentation
+        </div>
+        <div class="combobox-item" data-value="marketing">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          Marketing
+        </div>
+        <div class="combobox-item" data-value="research">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          Research
+        </div>
+        <div class="combobox-item" data-value="development">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          Development
+        </div>
+        <div class="combobox-item" data-value="design">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          Design
+        </div>
+      </div>
+    </div>
+  </preview>
+
+  <h3>Combobox Chips (Multi-Select)</h3>
+  <p class="section-meta">Multi-select combobox with checkmarks where tag chips correspond strictly to popover menu items.</p>
+  <preview style="padding: 4rem 1rem">
+    <div class="combobox-chips" popovertarget="combo-multi" style="width: 340px; anchor-name: --a-combo-multi">
+      <span class="combobox-chip" data-val="React">
+        React
+        <button class="combobox-chip-remove" tabindex="-1">&times;</button>
+      </span>
+      <span class="combobox-chip" data-val="Next.js">
+        Next.js
+        <button class="combobox-chip-remove" tabindex="-1">&times;</button>
+      </span>
+      <input type="text" class="combobox-chip-input" popovertarget="combo-multi" placeholder="Add framework..." />
+    </div>
+
+    <div
+      id="combo-multi"
+      popover="manual"
+      class="popover combobox-popover"
+      data-placement="bottom-start"
+      multiple
+      style="position-anchor: --a-combo-multi; min-width: anchor-size(width)"
+    >
+      <div class="combobox-content">
+        <div class="combobox-empty">No framework found.</div>
+        <div class="combobox-item selected">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          React
+        </div>
+        <div class="combobox-item selected">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          Next.js
+        </div>
+        <div class="combobox-item">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          Vue
+        </div>
+        <div class="combobox-item">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          Svelte
+        </div>
+        <div class="combobox-item">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          Angular
+        </div>
+      </div>
+    </div>
+  </preview>
+
+  <h3>Combobox Tag Input (Custom Tags)</h3>
+  <p class="section-meta">Standalone tag input allowing users to type custom tags and press Enter to create chips.</p>
+  <preview style="padding: 2rem 1rem">
+    <div class="combobox-chips" style="width: 340px">
+      <span class="combobox-chip">
+        HTML
+        <button class="combobox-chip-remove" aria-label="Remove HTML">&times;</button>
+      </span>
+      <span class="combobox-chip">
+        CSS
+        <button class="combobox-chip-remove" aria-label="Remove CSS">&times;</button>
+      </span>
+      <input type="text" class="combobox-chip-input" placeholder="Add custom tag..." />
+    </div>
+  </preview>
+
+  <h3>Disabled</h3>
+  <p class="section-meta">Disable the entire combobox to prevent user interaction.</p>
+  <preview style="padding: 4rem 1rem">
+    <!-- Trigger Button -->
+    <button
+      disabled
+      popovertarget="combo-disabled"
+      class="combobox-trigger"
+      style="width: 200px; anchor-name: --a-combo-disabled"
+    >
+      <span class="combobox-value">Select timezone...</span>
+      <i data-lucide="chevrons-up-down" style="width: 1rem; height: 1rem; opacity: 0.5"></i>
+    </button>
+
+    <!-- Popover Content -->
+    <div
+      id="combo-disabled"
+      popover
+      class="popover combobox-popover"
+      data-placement="bottom-start"
+      style="position-anchor: --a-combo-disabled"
+    >
+      <div class="combobox-search">
+        <i data-lucide="search"></i>
+        <input type="text" class="combobox-input" placeholder="Search timezone..." />
+      </div>
+      <div class="combobox-content">
+        <div class="combobox-empty">No timezone found.</div>
+        <div class="combobox-item" data-value="utc">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          UTC
+        </div>
+      </div>
+    </div>
+  </preview>
+
+  <h3>Combobox Groups</h3>
+  <p class="section-meta">Organize options into groups using group labels.</p>
+  <preview style="padding: 4rem 1rem">
+    <!-- Trigger Button -->
+    <button popovertarget="combo-browser" class="combobox-trigger" style="width: 220px; anchor-name: --a-combo-browser">
+      <span class="combobox-value">Select a browser...</span>
+      <i data-lucide="chevrons-up-down" style="width: 1rem; height: 1rem; opacity: 0.5"></i>
+    </button>
+
+    <!-- Popover Content -->
+    <div
+      id="combo-browser"
+      popover
+      class="popover combobox-popover"
+      data-placement="bottom-start"
+      style="position-anchor: --a-combo-browser; --combobox-width: 220px"
+    >
+      <div class="combobox-search">
+        <i data-lucide="search"></i>
+        <input type="text" class="combobox-input" placeholder="Search browsers..." />
+      </div>
+      <div class="combobox-content">
+        <div class="combobox-empty">No browser found.</div>
+
+        <div class="combobox-group">
+          <div class="combobox-group-label">Desktop</div>
+          <div class="combobox-item" data-value="chrome">
+            <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+            Google Chrome
+          </div>
+          <div class="combobox-item" data-value="safari">
+            <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+            Apple Safari
+          </div>
+        </div>
+
+        <div class="combobox-group">
+          <div class="combobox-group-label">Mobile</div>
+          <div class="combobox-item" data-value="firefox-ios">
+            <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+            Firefox for iOS
+          </div>
+          <div class="combobox-item" data-value="opera-mini">
+            <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+            Opera Mini
+          </div>
+        </div>
+      </div>
+    </div>
+  </preview>
+
+  <h3>Combobox Height</h3>
+  <p class="section-meta">
+    Force a fixed height to prevent the popover from resizing drastically when filtering returns few or no results.
+  </p>
+  <preview style="padding: 4rem 1rem">
+    <!-- Trigger Button -->
+    <button popovertarget="combo-height" class="combobox-trigger" style="width: 200px; anchor-name: --a-combo-height">
+      <span class="combobox-value">Select state...</span>
+      <i data-lucide="chevrons-up-down" style="width: 1rem; height: 1rem; opacity: 0.5"></i>
+    </button>
+
+    <!-- Popover Content -->
+    <div
+      id="combo-height"
+      popover
+      class="popover combobox-popover"
+      data-placement="bottom-start"
+      style="position-anchor: --a-combo-height"
+    >
+      <div class="combobox-search">
+        <i data-lucide="search"></i>
+        <input type="text" class="combobox-input" placeholder="Search state..." />
+      </div>
+      <div class="combobox-content" style="height: 120px">
+        <div class="combobox-empty">No state found.</div>
+        <div class="combobox-item" data-value="california">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          California
+        </div>
+        <div class="combobox-item" data-value="texas">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          Texas
+        </div>
+        <div class="combobox-item" data-value="florida">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          Florida
+        </div>
+        <div class="combobox-item" data-value="new-york">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          New York
+        </div>
+      </div>
+    </div>
+  </preview>
+
+  <h3>Combobox Inline</h3>
+  <p class="section-meta">
+    A modernized combobox where the search input itself acts as the trigger, similar to modern combobox components.
+  </p>
+  <preview style="padding: 4rem 1rem">
+    <!-- Trigger Input Group -->
+    <div class="input-group combobox-input-trigger" style="width: 250px; anchor-name: --a-combo-inline">
+      <span class="input-group-addon text-muted-foreground">
+        <i data-lucide="search" style="width: 1rem; height: 1rem"></i>
+      </span>
+      <input type="text" class="input" data-popover-target="combo-inline" placeholder="Search frameworks..." />
+    </div>
+
+    <!-- Popover Content (No internal search box needed) -->
+    <div
+      id="combo-inline"
+      popover="manual"
+      class="popover combobox-popover"
+      data-placement="bottom-start"
+      style="position-anchor: --a-combo-inline; min-width: anchor-size(width)"
+    >
+      <div class="combobox-content">
+        <div class="combobox-empty">No framework found.</div>
+        <div class="combobox-item" data-value="nextjs">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          Next.js
+        </div>
+        <div class="combobox-item" data-value="react">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          React
+        </div>
+        <div class="combobox-item" data-value="vue">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          Vue
+        </div>
+        <div class="combobox-item" data-value="svelte">
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+          Svelte
+        </div>
+      </div>
+    </div>
+  </preview>
+
+  <h3>Combobox Custom</h3>
+  <p class="section-meta">You can render custom components or complex layouts inside the combobox items.</p>
+  <preview style="padding: 4rem 1rem">
+    <!-- Trigger Input Group -->
+    <div class="input-group combobox-input-trigger" style="width: 280px; anchor-name: --a-combo-custom">
+      <input type="text" class="input" data-popover-target="combo-custom" placeholder="Assign to..." />
+      <span class="input-group-addon text-muted-foreground">
+        <i data-lucide="chevron-down" style="width: 1rem; height: 1rem"></i>
+      </span>
+    </div>
+
+    <div
+      id="combo-custom"
+      popover
+      class="popover combobox-popover"
+      data-placement="bottom-start"
+      style="position-anchor: --a-combo-custom; min-width: anchor-size(width)"
+    >
+      <div class="combobox-content">
+        <div class="combobox-empty">No user found.</div>
+
+        <div class="combobox-item" data-value="alex" data-label="Alex">
+          <div style="display: flex; flex-direction: column; gap: 0.125rem">
+            <span>Alex</span>
+            <span class="text-muted-foreground" style="font-size: 0.75rem">Project Manager</span>
+          </div>
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+        </div>
+
+        <div class="combobox-item" data-value="elena" data-label="Elena">
+          <div style="display: flex; flex-direction: column; gap: 0.125rem">
+            <span>Elena</span>
+            <span class="text-muted-foreground" style="font-size: 0.75rem">Lead Designer</span>
+          </div>
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+        </div>
+
+        <div class="combobox-item" data-value="marcus" data-label="Marcus">
+          <div style="display: flex; flex-direction: column; gap: 0.125rem">
+            <span>Marcus</span>
+            <span class="text-muted-foreground" style="font-size: 0.75rem">Frontend Developer</span>
+          </div>
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+        </div>
+
+        <div class="combobox-item" data-value="sarah" data-label="Sarah">
+          <div style="display: flex; flex-direction: column; gap: 0.125rem">
+            <span>Sarah Connor</span>
+            <span class="text-muted-foreground" style="font-size: 0.75rem">Quality Assurance</span>
+          </div>
+          <div class="combobox-item-icon"><i data-lucide="check"></i></div>
+        </div>
+      </div>
+    </div>
+  </preview>
+</section>

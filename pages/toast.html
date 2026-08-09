@@ -1,0 +1,118 @@
+<section id="toast" class="section">
+  <h2>Toast</h2>
+  <p class="section-meta">
+    A non-blocking notification component. Uses the
+    <code>card</code>
+    component for content and
+    <code>data-dismiss</code>
+    to cancel.
+  </p>
+
+  <h3>Default</h3>
+  <preview>
+    <button class="btn btn-secondary" onclick="toast('Settings saved successfully.')">Show Toast</button>
+  </preview>
+
+  <h3>Toast Dismiss</h3>
+  <preview>
+    <button
+      class="btn btn-secondary"
+      onclick="
+        toast(
+          '<div style=&quot;display: grid; gap: 0.25rem;&quot;><div style=&quot;font-weight: 600; line-height: 1;&quot;>Upload Complete</div><div style=&quot;color: var(--muted-foreground);&quot;>Your file has been uploaded to the cloud.</div></div><button class=&quot;btn btn-outline btn-sm&quot; data-dismiss>Dismiss</button>',
+        )
+      "
+    >
+      With Dismiss
+    </button>
+  </preview>
+
+  <h3>Placements</h3>
+  <preview class="demo-grid">
+    <button class="btn btn-secondary" onclick="toast('Message sent.', { placement: 'top-right' })">Top Right</button>
+    <button class="btn btn-secondary" onclick="toast('Profile updated.', { placement: 'top-center' })">
+      Top Center
+    </button>
+    <button class="btn btn-secondary" onclick="toast('New comment.', { placement: 'top-left' })">Top Left</button>
+    <button class="btn btn-secondary" onclick="toast('File deleted.', { placement: 'bottom-right' })">
+      Bottom Right
+    </button>
+    <button class="btn btn-secondary" onclick="toast('Changes saved.', { placement: 'bottom-center' })">
+      Bottom Center
+    </button>
+    <button class="btn btn-secondary" onclick="toast('Task completed.', { placement: 'bottom-left' })">
+      Bottom Left
+    </button>
+  </preview>
+
+  <h3>Toast Persistent</h3>
+  <preview class="demo-grid" style="grid-template-columns: 1fr 1fr">
+    <button
+      class="btn btn-secondary"
+      onclick="
+        toast(
+          '<span>Sending message...</span><button class=&quot;btn btn-outline btn-sm&quot; data-dismiss>Abort</button>',
+          { duration: 0 },
+        )
+      "
+    >
+      Persistent
+    </button>
+    <button class="btn btn-outline" onclick="toastClear()">Clear All</button>
+  </preview>
+
+  <h3>Toast Template</h3>
+  <preview>
+    <button class="btn btn-primary" onclick="toastEl(document.getElementById('custom-toast'))">New Message</button>
+    <template id="custom-toast">
+      <div style="display: flex; gap: 1rem">
+        <div
+          class="avatar"
+          style="
+            width: 2.25rem;
+            height: 2.25rem;
+            flex-shrink: 0;
+            background-color: color-mix(in oklch, var(--primary) 10%, transparent);
+            color: var(--primary);
+          "
+        >
+          <span class="avatar-fallback" style="font-size: 0.75rem">
+            <i data-lucide="user" style="width: 1rem; height: 1rem"></i>
+          </span>
+        </div>
+        <div style="flex: 1; min-width: 0">
+          <div style="display: flex; justify-content: space-between">
+            <div style="font-weight: 600; color: var(--foreground)">Alex Doe</div>
+            <span style="font-size: 0.75rem; color: var(--muted-foreground)">Just now</span>
+          </div>
+          <div style="color: var(--muted-foreground); margin-bottom: 0.75rem; line-height: 1.4">
+            Hey, I just shared the project files with you. Let me know what you think!
+          </div>
+          <div style="display: flex; gap: 0.5rem">
+            <button class="btn btn-primary btn-sm" data-dismiss>Reply</button>
+            <button class="btn btn-outline btn-sm" data-dismiss>Ignore</button>
+          </div>
+        </div>
+        <button
+          class="btn btn-plain btn-icon-sm"
+          style="margin-top: -0.25rem; margin-right: -0.5rem; color: var(--muted-foreground)"
+          data-dismiss
+        >
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+    </template>
+  </preview>
+
+  <h2>Usage</h2>
+  <pre data-label="JS"><code class="language-js">import { toast, toastEl, toastClear } from './index.js';
+
+toast('&lt;div class="card" style="padding: 1rem 1.25rem;"&gt;Settings saved.&lt;/div&gt;');
+
+toast(`...html...`, { placement: 'bottom-center', duration: 5000 });
+
+toastEl(document.getElementById('my-template'));
+
+toastClear();
+</code></pre>
+</section>

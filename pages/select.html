@@ -1,0 +1,157 @@
+<section id="select" class="section">
+  <h2>Select</h2>
+  <p class="section-meta">Displays a list of options for the user to pick from—triggered by a button.</p>
+
+  <preview>
+    <select class="select" style="max-width: 220px; width: 100%">
+      <button>
+        <selectedcontent></selectedcontent>
+        <i data-lucide="chevron-down" class="select-indicator"></i>
+      </button>
+      <option value="" disabled selected hidden>Select project type…</option>
+      <option value="design">Design</option>
+      <option value="marketing">Marketing</option>
+      <option value="research">Research</option>
+      <option value="development">Development</option>
+    </select>
+  </preview>
+
+  <h3>Scrollable</h3>
+  <p class="section-meta">
+    Select menus automatically handle vertical scrolling when content exceeds the maximum height.
+  </p>
+  <preview>
+    <select class="select" style="max-width: 320px; width: 100%">
+      <button>
+        <selectedcontent></selectedcontent>
+        <i data-lucide="chevron-down" class="select-indicator"></i>
+      </button>
+      <option value="" disabled selected hidden>Select timezone…</option>
+      <option value="utc-12">(UTC-12:00) International Date Line West</option>
+      <option value="utc-11">(UTC-11:00) Coordinated Universal Time-11</option>
+      <option value="utc-10">(UTC-10:00) Hawaii</option>
+      <option value="utc-9">(UTC-09:00) Alaska</option>
+      <option value="utc-8">(UTC-08:00) Pacific Time (US & Canada)</option>
+      <option value="utc-7">(UTC-07:00) Mountain Time (US & Canada)</option>
+      <option value="utc-6">(UTC-06:00) Central Time (US & Canada)</option>
+      <option value="utc-5">(UTC-05:00) Eastern Time (US & Canada)</option>
+      <option value="utc-4">(UTC-04:00) Atlantic Time (Canada)</option>
+      <option value="utc-3.5">(UTC-03:30) Newfoundland</option>
+      <option value="utc-3">(UTC-03:00) Brasilia, Buenos Aires</option>
+      <option value="utc-2">(UTC-02:00) Mid-Atlantic</option>
+      <option value="utc-1">(UTC-01:00) Azores, Cape Verde Islands</option>
+      <option value="utc+0">(UTC+00:00) London, Dublin, Lisbon, Casablanca</option>
+      <option value="utc+1">(UTC+01:00) Paris, Berlin, Rome, Madrid</option>
+      <option value="utc+2">(UTC+02:00) Athens, Cairo, Johannesburg</option>
+      <option value="utc+3">(UTC+03:00) Moscow, Istanbul, Riyadh</option>
+      <option value="utc+3.5">(UTC+03:30) Tehran</option>
+      <option value="utc+4">(UTC+04:00) Dubai, Abu Dhabi, Baku</option>
+      <option value="utc+4.5">(UTC+04:30) Kabul</option>
+      <option value="utc+5">(UTC+05:00) Tashkent, Karachi</option>
+      <option value="utc+5.5">(UTC+05:30) New Delhi, Mumbai, Kolkata</option>
+      <option value="utc+5.75">(UTC+05:45) Kathmandu</option>
+      <option value="utc+6">(UTC+06:00) Dhaka, Almaty</option>
+      <option value="utc+6.5">(UTC+06:30) Yangon</option>
+      <option value="utc+7">(UTC+07:00) Bangkok, Jakarta, Hanoi</option>
+      <option value="utc+8">(UTC+08:00) Singapore, Beijing, Hong Kong</option>
+      <option value="utc+9">(UTC+09:00) Tokyo, Seoul</option>
+      <option value="utc+9.5">(UTC+09:30) Adelaide, Darwin</option>
+      <option value="utc+10">(UTC+10:00) Sydney, Melbourne, Brisbane</option>
+      <option value="utc+11">(UTC+11:00) Solomon Islands, New Caledonia</option>
+      <option value="utc+12">(UTC+12:00) Auckland, Fiji</option>
+    </select>
+  </preview>
+
+  <h3>Groups</h3>
+  <p class="section-meta">
+    Organize options into groups using the native
+    <code>optgroup</code>
+    element.
+  </p>
+  <preview>
+    <select class="select" style="max-width: 280px; width: 100%">
+      <button>
+        <selectedcontent></selectedcontent>
+        <i data-lucide="chevron-down" class="select-indicator"></i>
+      </button>
+      <option value="" disabled selected hidden>Select a framework…</option>
+      <optgroup>
+        <legend>Frontend</legend>
+        <option value="react">React</option>
+        <option value="vue">Vue.js</option>
+        <option value="svelte">Svelte</option>
+        <option value="angular">Angular</option>
+      </optgroup>
+      <optgroup>
+        <legend>Backend</legend>
+        <option value="express">Express</option>
+        <option value="nestjs">NestJS</option>
+        <option value="fastapi">FastAPI</option>
+        <option value="django">Django</option>
+      </optgroup>
+    </select>
+  </preview>
+
+  <h3>Disabled</h3>
+  <p class="section-meta">Disable the entire select to prevent user interaction.</p>
+  <preview>
+    <select class="select" disabled style="max-width: 220px; width: 100%">
+      <button>
+        <selectedcontent></selectedcontent>
+        <i data-lucide="chevron-down" class="select-indicator"></i>
+      </button>
+      <option value="" disabled selected hidden>Select country…</option>
+      <option value="us">United States</option>
+      <option value="uk">United Kingdom</option>
+    </select>
+  </preview>
+
+  <h3>Invalid</h3>
+  <p class="section-meta">
+    Use the
+    <code>aria-invalid</code>
+    attribute to indicate a validation error state.
+  </p>
+  <preview>
+    <select class="select" aria-invalid="true" style="max-width: 220px; width: 100%">
+      <button>
+        <selectedcontent></selectedcontent>
+        <i data-lucide="chevron-down" class="select-indicator"></i>
+      </button>
+      <option value="" disabled selected hidden>Select category…</option>
+      <option value="general">General</option>
+      <option value="professional">Professional</option>
+    </select>
+  </preview>
+
+  <h3>Native Select</h3>
+  <p class="section-meta">
+    A styled native HTML
+    <code>&lt;select&gt;</code>
+    element with consistent design system integration, relying on native OS dropdown menus for maximum compatibility.
+  </p>
+  <preview>
+    <div style="position: relative; max-width: 220px; width: 100%">
+      <select class="input" style="appearance: none; padding-right: 2rem; cursor: pointer">
+        <option value="" disabled selected hidden>Select version…</option>
+        <option value="1.0">v1.0</option>
+        <option value="2.0">v2.0</option>
+        <option value="3.0">v3.0</option>
+      </select>
+      <i
+        data-lucide="chevron-down"
+        class="text-muted-foreground"
+        style="
+          position: absolute;
+          right: 0.75rem;
+          top: 50%;
+          translate: 0 -50%;
+          width: 1rem;
+          height: 1rem;
+          pointer-events: none;
+          opacity: 0.5;
+        "
+      ></i>
+    </div>
+  </preview>
+</section>

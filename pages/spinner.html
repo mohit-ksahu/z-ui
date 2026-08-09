@@ -1,0 +1,76 @@
+<section id="spinner" class="section">
+  <h2>Spinner</h2>
+  <p class="section-meta">A circular loading indicator used to show that an operation is in progress.</p>
+
+  <preview>
+    <div class="spinner"></div>
+  </preview>
+
+  <h3>Spinner Sizes</h3>
+  <p class="section-meta">
+    Spinners scale natively with the parent's
+    <code>font-size</code>
+    using
+    <code>em</code>
+    units. You can also override the size directly.
+  </p>
+  <preview>
+    <div style="display: flex; align-items: center; gap: 1rem">
+      <div class="spinner" style="font-size: 0.75rem"></div>
+      <div class="spinner"></div>
+      <div class="spinner" style="font-size: 1.5rem"></div>
+    </div>
+  </preview>
+
+  <h3>Spinner Button</h3>
+  <p class="section-meta">Include a spinner within a button. It will automatically match the button's text size.</p>
+  <preview>
+    <div style="display: flex; align-items: center; gap: 1rem">
+      <button class="btn btn-primary" disabled>
+        <div class="spinner"></div>
+        Saving Changes
+      </button>
+      <button class="btn btn-secondary btn-sm" disabled>
+        <div class="spinner"></div>
+        Loading Data...
+      </button>
+      <button class="btn btn-outline btn-icon" disabled aria-label="Loading">
+        <div class="spinner"></div>
+      </button>
+    </div>
+  </preview>
+
+  <h3>Spinner Badge</h3>
+  <p class="section-meta">Add a spinner to a badge. The spinner inherits the badge's font-size perfectly.</p>
+  <preview>
+    <div style="display: flex; align-items: center; gap: 1rem">
+      <span class="badge badge-secondary">
+        <div class="spinner" style="border-width: 0.1em"></div>
+        Processing
+      </span>
+      <span class="badge badge-outline">
+        <div class="spinner" style="border-width: 0.1em"></div>
+        Updating
+      </span>
+    </div>
+  </preview>
+
+  <h3>Spinner Input</h3>
+  <p class="section-meta">Spinners can be used within input groups to show field-level loading states.</p>
+  <preview>
+    <div style="display: flex; flex-direction: column; gap: 1rem">
+      <div class="input-group">
+        <input type="text" class="input" placeholder="Connecting..." readonly />
+        <div class="input-group-addon">
+          <div class="spinner"></div>
+        </div>
+      </div>
+      <div class="input-group">
+        <div class="input-group-addon">
+          <div class="spinner"></div>
+        </div>
+        <input type="text" class="input" placeholder="Searching..." readonly />
+      </div>
+    </div>
+  </preview>
+</section>

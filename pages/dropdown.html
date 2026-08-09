@@ -1,0 +1,399 @@
+<section id="dropdown" class="section">
+  <h2>Dropdown Menu</h2>
+  <p class="section-meta">
+    Displays a menu to the user — such as a set of actions or functions — triggered by a button.
+  </p>
+
+  <!-- Basic -->
+  <h3>Basic</h3>
+  <preview>
+    <button aria-haspopup="menu" popovertarget="dd-basic" class="btn btn-outline" style="anchor-name: --dd-basic">
+      Filter
+    </button>
+    <menu
+      id="dd-basic"
+      popover
+      class="dropdown"
+      data-placement="bottom-start"
+      role="menu"
+      style="position-anchor: --dd-basic"
+    >
+      <button class="menu-item" role="menuitem">By Date</button>
+      <button class="menu-item" role="menuitem">By Size</button>
+      <button class="menu-item" role="menuitem">By Author</button>
+    </menu>
+  </preview>
+
+  <!-- Interactive Menu -->
+  <h3>Interactive Menu</h3>
+  <preview>
+    <button aria-haspopup="menu" popovertarget="dd-complex" class="btn btn-outline" style="anchor-name: --dd-complex">
+      Settings
+    </button>
+    <menu
+      id="dd-complex"
+      popover
+      class="dropdown"
+      data-placement="bottom-start"
+      role="menu"
+      style="position-anchor: --dd-complex; width: 14rem"
+    >
+      <div class="menu-label">Projects</div>
+      <button class="menu-item" role="menuitem">
+        <i data-lucide="plus-circle"></i>
+        Create New
+      </button>
+      <button class="menu-item" role="menuitem">
+        <i data-lucide="folder"></i>
+        Open Existing
+      </button>
+
+      <button
+        aria-haspopup="menu"
+        popovertarget="dd-complex-recent"
+        class="menu-item submenu-trigger"
+        role="menuitem"
+        style="anchor-name: --dd-complex-recent"
+      >
+        <i data-lucide="clock"></i>
+        Recent Files
+        <i data-lucide="chevron-right" class="submenu-icon"></i>
+      </button>
+      <menu
+        id="dd-complex-recent"
+        popover
+        class="dropdown submenu"
+        data-placement="right-start"
+        role="menu"
+        style="position-anchor: --dd-complex-recent; width: 13rem"
+      >
+        <div class="menu-label">History</div>
+        <button class="menu-item" role="menuitem">
+          <i data-lucide="file-text"></i>
+          index.html
+        </button>
+        <button class="menu-item" role="menuitem">
+          <i data-lucide="file-text"></i>
+          styles.css
+        </button>
+
+        <button
+          aria-haspopup="menu"
+          popovertarget="dd-complex-more-proj"
+          class="menu-item submenu-trigger"
+          role="menuitem"
+          style="anchor-name: --dd-complex-more-proj"
+        >
+          <i data-lucide="more-horizontal"></i>
+          More
+          <i data-lucide="chevron-right" class="submenu-icon"></i>
+        </button>
+        <menu
+          id="dd-complex-more-proj"
+          popover
+          class="dropdown submenu"
+          data-placement="right-start"
+          role="menu"
+          style="position-anchor: --dd-complex-more-proj; width: 12rem"
+        >
+          <button class="menu-item" role="menuitem">
+            <i data-lucide="archive"></i>
+            Archived
+          </button>
+          <button class="menu-item" role="menuitem">
+            <i data-lucide="trash"></i>
+            Deleted
+          </button>
+        </menu>
+      </menu>
+
+      <div class="menu-separator"></div>
+      <button class="menu-item" role="menuitem">
+        <i data-lucide="download"></i>
+        Export Data
+        <span class="shortcut">⌘E</span>
+      </button>
+
+      <div class="menu-separator"></div>
+
+      <div class="menu-label">Notifications</div>
+      <label class="menu-item" style="justify-content: space-between" role="menuitemcheckbox">
+        <span style="display: flex; align-items: center; gap: 0.5rem">
+          <i data-lucide="mail"></i>
+          Email Updates
+        </span>
+        <input type="checkbox" class="checkbox" checked aria-hidden="true" tabindex="-1" />
+      </label>
+      <label class="menu-item" style="justify-content: space-between" role="menuitemcheckbox">
+        <span style="display: flex; align-items: center; gap: 0.5rem">
+          <i data-lucide="bell"></i>
+          Push Alerts
+        </span>
+        <input type="checkbox" class="checkbox" aria-hidden="true" tabindex="-1" />
+      </label>
+
+      <button
+        aria-haspopup="menu"
+        popovertarget="dd-complex-theme"
+        class="menu-item submenu-trigger"
+        role="menuitem"
+        style="anchor-name: --dd-complex-theme"
+      >
+        <i data-lucide="palette"></i>
+        Theme Mode
+        <i data-lucide="chevron-right" class="submenu-icon"></i>
+      </button>
+      <menu
+        id="dd-complex-theme"
+        popover
+        class="dropdown submenu"
+        data-placement="right-start"
+        role="menu"
+        style="position-anchor: --dd-complex-theme; width: 11rem"
+      >
+        <div class="menu-label">Preferences</div>
+        <label class="menu-item" role="menuitemradio">
+          <input type="radio" name="dd-complex-time" class="radio" style="flex-shrink: 0" checked />
+          Light
+        </label>
+        <label class="menu-item" role="menuitemradio">
+          <input type="radio" name="dd-complex-time" class="radio" style="flex-shrink: 0" />
+          Dark
+        </label>
+        <label class="menu-item" role="menuitemradio">
+          <input type="radio" name="dd-complex-time" class="radio" style="flex-shrink: 0" />
+          System
+        </label>
+      </menu>
+
+      <div class="menu-separator"></div>
+
+      <button class="menu-item menu-item-destructive" role="menuitem">
+        <i data-lucide="trash"></i>
+        Clear History
+        <span class="shortcut">⇧⌘D</span>
+      </button>
+    </menu>
+  </preview>
+
+  <!-- Avatar -->
+  <h3>Avatar</h3>
+  <preview>
+    <button
+      aria-haspopup="menu"
+      popovertarget="dd-avatar"
+      class="avatar"
+      style="anchor-name: --dd-avatar; border: none; padding: 0; background: transparent; cursor: pointer"
+    >
+      <img src="https://i.pravatar.cc/80?u=admin" alt="Admin" class="avatar-image" />
+      <span class="avatar-fallback">AD</span>
+    </button>
+    <menu
+      id="dd-avatar"
+      popover
+      class="dropdown"
+      data-placement="bottom-start"
+      role="menu"
+      style="position-anchor: --dd-avatar"
+    >
+      <div class="menu-label" style="display: flex; flex-direction: column">
+        <span style="font-weight: 600; color: var(--foreground)">Alex</span>
+        <span style="font-weight: normal; font-size: 0.75rem">alex@example.com</span>
+      </div>
+      <div class="menu-separator"></div>
+      <button class="menu-item" role="menuitem">Profile</button>
+      <button class="menu-item" role="menuitem">Settings</button>
+      <button class="menu-item" role="menuitem">Notifications</button>
+      <div class="menu-separator"></div>
+      <button class="menu-item" role="menuitem">Log out</button>
+    </menu>
+  </preview>
+
+  <!-- Placements -->
+  <h3>Placements</h3>
+  <preview style="gap: 0.75rem; flex-wrap: wrap; justify-content: center; padding: 2.5rem">
+    <!-- Top Variants -->
+    <button aria-haspopup="menu" popovertarget="dd-p-ts" class="btn btn-outline btn-sm" style="anchor-name: --dd-p-ts">
+      Top Start
+    </button>
+    <menu
+      id="dd-p-ts"
+      popover
+      class="dropdown"
+      data-placement="top-start"
+      role="menu"
+      style="position-anchor: --dd-p-ts; width: auto"
+    >
+      <button class="menu-item" role="menuitem">Profile</button>
+      <button class="menu-item" role="menuitem">Settings</button>
+    </menu>
+
+    <button aria-haspopup="menu" popovertarget="dd-p-t" class="btn btn-outline btn-sm" style="anchor-name: --dd-p-t">
+      Top
+    </button>
+    <menu
+      id="dd-p-t"
+      popover
+      class="dropdown"
+      data-placement="top"
+      role="menu"
+      style="position-anchor: --dd-p-t; width: auto"
+    >
+      <button class="menu-item" role="menuitem">Profile</button>
+      <button class="menu-item" role="menuitem">Settings</button>
+    </menu>
+
+    <button aria-haspopup="menu" popovertarget="dd-p-te" class="btn btn-outline btn-sm" style="anchor-name: --dd-p-te">
+      Top End
+    </button>
+    <menu
+      id="dd-p-te"
+      popover
+      class="dropdown"
+      data-placement="top-end"
+      role="menu"
+      style="position-anchor: --dd-p-te; width: auto"
+    >
+      <button class="menu-item" role="menuitem">Profile</button>
+      <button class="menu-item" role="menuitem">Settings</button>
+    </menu>
+
+    <!-- Bottom Variants -->
+    <button aria-haspopup="menu" popovertarget="dd-p-bs" class="btn btn-outline btn-sm" style="anchor-name: --dd-p-bs">
+      Bottom Start
+    </button>
+    <menu
+      id="dd-p-bs"
+      popover
+      class="dropdown"
+      data-placement="bottom-start"
+      role="menu"
+      style="position-anchor: --dd-p-bs; width: auto"
+    >
+      <button class="menu-item" role="menuitem">Profile</button>
+      <button class="menu-item" role="menuitem">Settings</button>
+    </menu>
+
+    <button aria-haspopup="menu" popovertarget="dd-p-b" class="btn btn-outline btn-sm" style="anchor-name: --dd-p-b">
+      Bottom
+    </button>
+    <menu
+      id="dd-p-b"
+      popover
+      class="dropdown"
+      data-placement="bottom"
+      role="menu"
+      style="position-anchor: --dd-p-b; width: auto"
+    >
+      <button class="menu-item" role="menuitem">Profile</button>
+      <button class="menu-item" role="menuitem">Settings</button>
+    </menu>
+
+    <button aria-haspopup="menu" popovertarget="dd-p-be" class="btn btn-outline btn-sm" style="anchor-name: --dd-p-be">
+      Bottom End
+    </button>
+    <menu
+      id="dd-p-be"
+      popover
+      class="dropdown"
+      data-placement="bottom-end"
+      role="menu"
+      style="position-anchor: --dd-p-be; width: auto"
+    >
+      <button class="menu-item" role="menuitem">Profile</button>
+      <button class="menu-item" role="menuitem">Settings</button>
+    </menu>
+
+    <!-- Left Variants -->
+    <button aria-haspopup="menu" popovertarget="dd-p-ls" class="btn btn-outline btn-sm" style="anchor-name: --dd-p-ls">
+      Left Start
+    </button>
+    <menu
+      id="dd-p-ls"
+      popover
+      class="dropdown"
+      data-placement="left-start"
+      role="menu"
+      style="position-anchor: --dd-p-ls; width: auto"
+    >
+      <button class="menu-item" role="menuitem">Profile</button>
+      <button class="menu-item" role="menuitem">Settings</button>
+    </menu>
+
+    <button aria-haspopup="menu" popovertarget="dd-p-l" class="btn btn-outline btn-sm" style="anchor-name: --dd-p-l">
+      Left
+    </button>
+    <menu
+      id="dd-p-l"
+      popover
+      class="dropdown"
+      data-placement="left"
+      role="menu"
+      style="position-anchor: --dd-p-l; width: auto"
+    >
+      <button class="menu-item" role="menuitem">Profile</button>
+      <button class="menu-item" role="menuitem">Settings</button>
+    </menu>
+
+    <button aria-haspopup="menu" popovertarget="dd-p-le" class="btn btn-outline btn-sm" style="anchor-name: --dd-p-le">
+      Left End
+    </button>
+    <menu
+      id="dd-p-le"
+      popover
+      class="dropdown"
+      data-placement="left-end"
+      role="menu"
+      style="position-anchor: --dd-p-le; width: auto"
+    >
+      <button class="menu-item" role="menuitem">Profile</button>
+      <button class="menu-item" role="menuitem">Settings</button>
+    </menu>
+
+    <!-- Right Variants -->
+    <button aria-haspopup="menu" popovertarget="dd-p-rs" class="btn btn-outline btn-sm" style="anchor-name: --dd-p-rs">
+      Right Start
+    </button>
+    <menu
+      id="dd-p-rs"
+      popover
+      class="dropdown"
+      data-placement="right-start"
+      role="menu"
+      style="position-anchor: --dd-p-rs; width: auto"
+    >
+      <button class="menu-item" role="menuitem">Profile</button>
+      <button class="menu-item" role="menuitem">Settings</button>
+    </menu>
+
+    <button aria-haspopup="menu" popovertarget="dd-p-r" class="btn btn-outline btn-sm" style="anchor-name: --dd-p-r">
+      Right
+    </button>
+    <menu
+      id="dd-p-r"
+      popover
+      class="dropdown"
+      data-placement="right"
+      role="menu"
+      style="position-anchor: --dd-p-r; width: auto"
+    >
+      <button class="menu-item" role="menuitem">Profile</button>
+      <button class="menu-item" role="menuitem">Settings</button>
+    </menu>
+
+    <button aria-haspopup="menu" popovertarget="dd-p-re" class="btn btn-outline btn-sm" style="anchor-name: --dd-p-re">
+      Right End
+    </button>
+    <menu
+      id="dd-p-re"
+      popover
+      class="dropdown"
+      data-placement="right-end"
+      role="menu"
+      style="position-anchor: --dd-p-re; width: auto"
+    >
+      <button class="menu-item" role="menuitem">Profile</button>
+      <button class="menu-item" role="menuitem">Settings</button>
+    </menu>
+  </preview>
+</section>

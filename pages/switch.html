@@ -1,0 +1,132 @@
+<section id="switch" class="section">
+  <h2>Switch</h2>
+  <p class="section-meta">A control that allows the user to toggle between checked and not checked.</p>
+
+  <preview>
+    <div style="display: flex; align-items: center; gap: 0.5rem">
+      <input type="checkbox" id="sw-default" role="switch" class="switch" checked />
+      <label for="sw-default" class="label">Airplane Mode</label>
+    </div>
+  </preview>
+
+  <h3>Switch Sizes</h3>
+  <p class="section-meta">Switches come in multiple sizes to fit different contexts.</p>
+  <preview>
+    <div style="display: flex; flex-direction: column; gap: 0.5rem">
+      <div style="display: flex; align-items: center; gap: 0.5rem">
+        <input type="checkbox" id="sw-size-def" role="switch" class="switch" checked />
+        <label for="sw-size-def" class="label">Default</label>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.5rem">
+        <input type="checkbox" id="sw-size-sm" role="switch" class="switch switch-sm" checked />
+        <label for="sw-size-sm" class="label">Small</label>
+      </div>
+    </div>
+  </preview>
+
+  <h3>Switch Description</h3>
+  <p class="section-meta">Extend the label with a descriptive text to provide more context.</p>
+  <preview>
+    <div style="display: flex; gap: 0.5rem">
+      <input type="checkbox" id="sw-desc" role="switch" class="switch" style="margin-top: 0.125rem" />
+      <div style="display: flex; flex-direction: column; gap: 0.5rem">
+        <label for="sw-desc" class="label">Marketing Emails</label>
+        <p style="margin: 0; font-size: 0.875rem; color: var(--muted-foreground)">
+          Receive updates about new features and special offers.
+        </p>
+      </div>
+    </div>
+  </preview>
+
+  <h3>Switch Card</h3>
+  <p class="section-meta">Card-style selection where the wrapper acts as a clickable card pattern.</p>
+  <style>
+    .switch-card-showcase {
+      background-color: var(--background);
+      transition:
+        border-color 100ms ease,
+        background-color 100ms ease;
+    }
+
+    .switch-card-showcase:has(.switch:checked) {
+      border-color: var(--border);
+      background-color: color-mix(in oklch, var(--primary) 5%, transparent);
+    }
+
+    .dark .switch-card-showcase:has(.switch:checked) {
+      background-color: color-mix(in oklch, var(--primary) 5%, transparent);
+    }
+  </style>
+  <preview>
+    <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 440px">
+      <label
+        class="card switch-card-showcase"
+        style="
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: space-between;
+          padding: 1rem;
+          cursor: pointer;
+        "
+        for="sw-card-1"
+      >
+        <div style="display: flex; flex-direction: column; gap: 0.125rem">
+          <span style="font-size: 0.875rem; font-weight: 500; letter-spacing: -0.01em">Stay logged in</span>
+          <span style="font-size: 0.875rem; color: var(--muted-foreground)">
+            Keep your session active for up to 30 days on this device.
+          </span>
+        </div>
+        <input type="checkbox" id="sw-card-1" role="switch" class="switch" checked style="margin-top: 0.125rem" />
+      </label>
+      <label
+        class="card switch-card-showcase"
+        style="
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: space-between;
+          padding: 1rem;
+          cursor: pointer;
+        "
+        for="sw-card-2"
+      >
+        <div style="display: flex; flex-direction: column; gap: 0.125rem">
+          <span style="font-size: 0.875rem; font-weight: 500; letter-spacing: -0.01em">Notifications</span>
+          <span style="font-size: 0.875rem; color: var(--muted-foreground)">
+            Get real-time alerts for new messages and activity.
+          </span>
+        </div>
+        <input type="checkbox" id="sw-card-2" role="switch" class="switch" style="margin-top: 0.125rem" />
+      </label>
+    </div>
+  </preview>
+
+  <h3>Disabled</h3>
+  <p class="section-meta">Prevent user interaction by disabling the switch.</p>
+  <preview>
+    <div style="display: flex; flex-direction: column; gap: 1rem">
+      <div style="display: flex; align-items: center; gap: 0.5rem">
+        <input type="checkbox" id="sw-dis-off" role="switch" class="switch" disabled />
+        <label for="sw-dis-off" class="label" style="opacity: 0.5">Private Account</label>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.5rem">
+        <input type="checkbox" id="sw-dis-on" role="switch" class="switch" checked disabled />
+        <label for="sw-dis-on" class="label" style="opacity: 0.5">Public Profile</label>
+      </div>
+    </div>
+  </preview>
+
+  <h3>Invalid</h3>
+  <p class="section-meta">
+    Indicate a validation error state using
+    <code>aria-invalid</code>
+    .
+  </p>
+  <preview>
+    <div style="display: flex; align-items: center; gap: 0.5rem">
+      <input type="checkbox" id="sw-invalid" role="switch" class="switch" aria-invalid="true" />
+      <label for="sw-invalid" class="label">Accept terms and conditions</label>
+    </div>
+  </preview>
+</section>

@@ -1,0 +1,163 @@
+<section id="breadcrumb" class="section">
+  <h2>Breadcrumb</h2>
+  <p class="section-meta">Displays the path to the current resource using a hierarchy of links.</p>
+
+  <!-- Basic -->
+  <preview>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item">
+          <a href="#breadcrumb" class="breadcrumb-link">Home</a>
+        </li>
+        <li class="breadcrumb-separator" aria-hidden="true">
+          <i data-lucide="chevron-right"></i>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="#breadcrumb" class="breadcrumb-link">Docs</a>
+        </li>
+        <li class="breadcrumb-separator" aria-hidden="true">
+          <i data-lucide="chevron-right"></i>
+        </li>
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-page" aria-current="page">Components</span>
+        </li>
+      </ol>
+    </nav>
+  </preview>
+
+  <!-- Custom Separator -->
+  <h3>Custom Separator</h3>
+  <preview>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item">
+          <a href="#breadcrumb" class="breadcrumb-link">Project</a>
+        </li>
+        <li class="breadcrumb-separator" aria-hidden="true">
+          <i data-lucide="slash"></i>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="#breadcrumb" class="breadcrumb-link">Source</a>
+        </li>
+        <li class="breadcrumb-separator" aria-hidden="true">
+          <i data-lucide="slash"></i>
+        </li>
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-page" aria-current="page">Main.js</span>
+        </li>
+      </ol>
+    </nav>
+  </preview>
+
+  <!-- Collapsed / With Ellipsis -->
+  <h3>Collapsed</h3>
+  <preview>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item">
+          <a href="#breadcrumb" class="breadcrumb-link">Dashboard</a>
+        </li>
+        <li class="breadcrumb-separator" aria-hidden="true">
+          <i data-lucide="chevron-right"></i>
+        </li>
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-ellipsis" role="presentation" aria-hidden="true">
+            <i data-lucide="ellipsis"></i>
+            <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0)">
+              More Sections
+            </span>
+          </span>
+        </li>
+        <li class="breadcrumb-separator" aria-hidden="true">
+          <i data-lucide="chevron-right"></i>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="#breadcrumb" class="breadcrumb-link">Files</a>
+        </li>
+        <li class="breadcrumb-separator" aria-hidden="true">
+          <i data-lucide="chevron-right"></i>
+        </li>
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-page" aria-current="page">Documents</span>
+        </li>
+      </ol>
+    </nav>
+  </preview>
+
+  <!-- With Dropdown -->
+  <h3>Dropdown</h3>
+  <preview>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item">
+          <a href="#breadcrumb" class="breadcrumb-link">Account</a>
+        </li>
+        <li class="breadcrumb-separator" aria-hidden="true">
+          <i data-lucide="chevron-right"></i>
+        </li>
+        <li class="breadcrumb-item" style="position: relative">
+          <button
+            class="breadcrumb-ellipsis btn btn-ghost"
+            style="padding: 0; width: 1.25rem; height: 1.25rem; anchor-name: --bc-drop"
+            popovertarget="bc-dropdown"
+            aria-label="Show more"
+          >
+            <i style="width: 1rem; height: 1rem" data-lucide="ellipsis"></i>
+          </button>
+          <menu
+            id="bc-dropdown"
+            popover
+            class="dropdown"
+            style="position-anchor: --bc-drop"
+            data-placement="bottom-start"
+          >
+            <a href="#breadcrumb" class="menu-item" role="menuitem">Profile</a>
+            <a href="#breadcrumb" class="menu-item" role="menuitem">Billing</a>
+            <a href="#breadcrumb" class="menu-item" role="menuitem">Security</a>
+          </menu>
+        </li>
+        <li class="breadcrumb-separator" aria-hidden="true">
+          <i data-lucide="chevron-right"></i>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="#breadcrumb" class="breadcrumb-link">Projects</a>
+        </li>
+        <li class="breadcrumb-separator" aria-hidden="true">
+          <i data-lucide="chevron-right"></i>
+        </li>
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-page" aria-current="page">Active</span>
+        </li>
+      </ol>
+    </nav>
+  </preview>
+
+  <!-- With Icon -->
+  <h3>Icon</h3>
+  <preview>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item">
+          <a href="#breadcrumb" class="breadcrumb-link" style="align-items: center" aria-label="Home">
+            <i data-lucide="home" style="width: 0.875rem; height: 0.875rem"></i>
+            <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0)">
+              Home
+            </span>
+          </a>
+        </li>
+        <li class="breadcrumb-separator" aria-hidden="true">
+          <i data-lucide="chevron-right"></i>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="#breadcrumb" class="breadcrumb-link">Settings</a>
+        </li>
+        <li class="breadcrumb-separator" aria-hidden="true">
+          <i data-lucide="chevron-right"></i>
+        </li>
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-page" aria-current="page">Privacy</span>
+        </li>
+      </ol>
+    </nav>
+  </preview>
+</section>
