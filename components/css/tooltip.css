@@ -1,0 +1,169 @@
+@layer components {
+  .tooltip-trigger {
+    position: relative;
+    display: inline-block;
+    z-index: auto;
+    color: var(--foreground);
+
+    @media (hover: hover) {
+      &:hover {
+        z-index: 200;
+
+        & .tooltip-content {
+          will-change: opacity, transform;
+
+          &[data-placement="bottom"],
+          &[data-placement="top"],
+          &[data-placement="right"],
+          &[data-placement="left"],
+          &:not([data-placement]) {
+            opacity: 1;
+            visibility: visible;
+          }
+
+          &[data-placement="bottom"],
+          &[data-placement="top"],
+          &:not([data-placement]) {
+            transform: translateX(-50%) translateY(0);
+          }
+
+          &[data-placement="right"],
+          &[data-placement="left"] {
+            transform: translateX(0) translateY(-50%);
+          }
+        }
+      }
+    }
+
+    &:focus-visible,
+    &:has(:focus-visible) {
+      z-index: 200;
+
+      & .tooltip-content {
+        will-change: opacity, transform;
+
+        &[data-placement="bottom"],
+        &[data-placement="top"],
+        &[data-placement="right"],
+        &[data-placement="left"],
+        &:not([data-placement]) {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &[data-placement="bottom"],
+        &[data-placement="top"],
+        &:not([data-placement]) {
+          transform: translateX(-50%) translateY(0);
+        }
+
+        &[data-placement="right"],
+        &[data-placement="left"] {
+          transform: translateX(0) translateY(-50%);
+        }
+      }
+    }
+
+    @media (hover: none) {
+      &:focus-within {
+        z-index: 200;
+
+        & .tooltip-content {
+          will-change: opacity, transform;
+
+          &[data-placement="bottom"],
+          &[data-placement="top"],
+          &[data-placement="right"],
+          &[data-placement="left"],
+          &:not([data-placement]) {
+            opacity: 1;
+            visibility: visible;
+          }
+
+          &[data-placement="bottom"],
+          &[data-placement="top"],
+          &:not([data-placement]) {
+            transform: translateX(-50%) translateY(0);
+          }
+
+          &[data-placement="right"],
+          &[data-placement="left"] {
+            transform: translateX(0) translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+
+  .tooltip-content {
+    background: var(--foreground);
+    color: var(--background);
+    padding: var(--spacing) calc(var(--spacing) * 2);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    border-radius: var(--radius-sm);
+
+    width: max-content;
+    max-width: 24rem;
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    pointer-events: none;
+    position-visibility: always;
+    transition: opacity var(--duration-normal) var(--ease-default),
+      transform var(--duration-normal) var(--ease-default),
+      visibility var(--duration-normal) var(--ease-default);
+    transition-delay: 100ms;
+
+    &[data-placement="top"],
+    &:not([data-placement]) {
+      bottom: anchor(top);
+      left: anchor(center);
+      transform: translateX(-50%) translateY(6px);
+      margin-bottom: 6px;
+      position-try-fallbacks: flip-block;
+    }
+
+    &[data-placement="bottom"] {
+      top: anchor(bottom);
+      left: anchor(center);
+      transform: translateX(-50%) translateY(-6px);
+      margin-top: 6px;
+      position-try-fallbacks: flip-block;
+      position-try-order: normal;
+    }
+
+    &[data-placement="left"] {
+      top: anchor(center);
+      right: anchor(left);
+      transform: translateX(6px) translateY(-50%);
+      margin-right: 6px;
+      position-try-fallbacks: flip-inline;
+    }
+
+    &[data-placement="right"] {
+      top: anchor(center);
+      left: anchor(right);
+      transform: translateX(-6px) translateY(-50%);
+      margin-left: 6px;
+      position-try-fallbacks: flip-inline;
+    }
+
+    &:is(:hover, :focus-within, [data-state="open"]) {
+      opacity: 1;
+      visibility: visible;
+
+      &[data-placement="top"],
+      &[data-placement="bottom"],
+      &:not([data-placement]) {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      &[data-placement="left"],
+      &[data-placement="right"] {
+        transform: translateX(0) translateY(-50%);
+      }
+    }
+  }
+}

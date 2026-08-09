@@ -1,0 +1,113 @@
+@layer components {
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 2);
+
+    &:has(> .tabs-list[aria-orientation="vertical"]) {
+      flex-direction: row;
+    }
+  }
+
+  .tabs-list {
+    position: relative;
+    display: inline-flex;
+    padding: 0.25rem;
+    background: var(--muted);
+    border-radius: var(--radius-lg);
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted-foreground);
+    width: fit-content;
+    isolation: isolate;
+
+    .tabs:not(:has(> .tabs-list[aria-orientation="vertical"])) & {
+      height: 2.25rem;
+    }
+
+    &[aria-orientation="vertical"] {
+      flex-direction: column;
+      height: fit-content;
+    }
+
+    .tabs-indicator {
+      position: absolute;
+      z-index: -1;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-xs);
+      transition: left var(--duration-normal) var(--ease-default),
+                  top var(--duration-normal) var(--ease-default),
+                  width var(--duration-normal) var(--ease-default),
+                  height var(--duration-normal) var(--ease-default);
+      pointer-events: none;
+    }
+  }
+
+  .tabs-trigger {
+    position: relative;
+    height: 100%;
+    flex: 1;
+    padding: 0 calc(var(--spacing) * 3);
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    background: transparent;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted-foreground);
+    cursor: default;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--spacing) * 1.5);
+    outline: none;
+    transition: background-color var(--duration-fast) var(--ease-default), color var(--duration-fast) var(--ease-default);
+
+    @media (hover: hover) {
+      &:not([disabled]):hover {
+        color: var(--foreground);
+      }
+    }
+    &:not([disabled]):active {
+      color: var(--foreground);
+    }
+
+    .tabs-list[aria-orientation="vertical"] & {
+      width: 100%;
+      height: 2rem;
+      justify-content: flex-start;
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    &[aria-selected="true"] {
+      background: var(--card);
+      color: var(--foreground);
+      border-color: var(--border);
+      box-shadow: var(--shadow-xs);
+    }
+
+    & svg,
+    & i {
+      width: 1rem;
+      height: 1rem;
+      flex-shrink: 0;
+    }
+  }
+
+  .tabs-content {
+    flex: 1;
+    font-size: 0.875rem;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+}

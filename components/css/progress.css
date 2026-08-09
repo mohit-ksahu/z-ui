@@ -1,0 +1,111 @@
+@layer components {
+  .progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 0.5rem;
+    border: none;
+    border-radius: var(--radius-full);
+    background: var(--muted);
+    overflow: hidden;
+    vertical-align: middle;
+
+    &::-webkit-progress-bar {
+      background: var(--muted);
+      border-radius: var(--radius-full);
+    }
+
+    &::-webkit-progress-value {
+      background: var(--primary);
+      border-radius: 0;
+      transition: width var(--duration-normal) var(--ease-default);
+    }
+
+    &::-moz-progress-bar {
+      background: var(--primary);
+      border-radius: 0;
+      transition: width var(--duration-normal) var(--ease-default);
+    }
+
+    &:indeterminate {
+      background-color: var(--secondary);
+      background-image: linear-gradient(90deg,
+              transparent 0%,
+              var(--primary) 0%,
+              var(--primary) 100%,
+              transparent 100%);
+      background-size: 25% 100%;
+      background-repeat: no-repeat;
+      animation: progress-indeterminate 1s infinite linear;
+
+      &::-webkit-progress-bar {
+        background: transparent;
+      }
+      &::-webkit-progress-value {
+        background: transparent;
+      }
+      &::-moz-progress-bar {
+        background: transparent;
+      }
+    }
+  }
+
+  @keyframes progress-indeterminate {
+    0% {
+      background-position: -30% 0;
+    }
+    100% {
+      background-position: 130% 0;
+    }
+  }
+
+  .meter {
+    appearance: none;
+    width: 100%;
+    height: 0.5rem;
+    border: none;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    background: var(--muted);
+    vertical-align: middle;
+
+    &::-webkit-meter-bar {
+      background: var(--muted);
+      border: none;
+      border-radius: var(--radius-full);
+      height: 100%;
+    }
+
+    &::-webkit-meter-optimum-value,
+    &::-webkit-meter-suboptimum-value,
+    &::-webkit-meter-even-less-good-value {
+      border-radius: 0;
+      transition: width var(--duration-normal) var(--ease-default);
+    }
+
+    &::-webkit-meter-optimum-value {
+      background: var(--success);
+    }
+
+    &::-webkit-meter-suboptimum-value {
+      background: var(--warning);
+    }
+
+    &::-webkit-meter-even-less-good-value {
+      background: var(--destructive);
+    }
+
+    &::-moz-meter-bar {
+      background: var(--success);
+      border-radius: 0;
+    }
+
+    &:-moz-meter-sub-optimum::-moz-meter-bar {
+      background: var(--warning);
+    }
+
+    &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+      background: var(--destructive);
+    }
+  }
+}

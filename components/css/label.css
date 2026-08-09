@@ -1,0 +1,22 @@
+@layer components {
+  .label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--foreground);
+    cursor: default;
+    user-select: none;
+
+    &:has(+ :disabled),
+    :disabled + & {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    &.label-required::after {
+      content: " *";
+      color: var(--destructive);
+      margin-left: calc(var(--spacing) * 0.25);
+    }
+  }
+}

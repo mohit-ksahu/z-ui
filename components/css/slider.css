@@ -1,0 +1,12 @@
+@layer components {
+  .slider {
+    width: 100%;
+    cursor: pointer;
+    accent-color: var(--primary);
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

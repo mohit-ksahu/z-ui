@@ -1,0 +1,112 @@
+@layer components {
+  .hover-card-trigger {
+    position: relative;
+    display: inline-block;
+    z-index: auto;
+
+    @media (hover: hover) {
+      &:hover {
+        z-index: 200;
+
+        & .hover-card-content {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+          transform: scale(1);
+        }
+      }
+    }
+
+    @media (hover: none) {
+      &:focus-within {
+        z-index: 200;
+
+        & .hover-card-content {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  .hover-card-content {
+    position: fixed;
+    position-visibility: always;
+    z-index: 200;
+    width: 16rem;             
+    padding: 0.625rem;        
+    border-radius: var(--radius-lg);
+    background-color: var(--popover);
+    color: var(--popover-foreground);
+    font-size: 0.875rem;      
+
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    outline: none;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(0.95);
+    transform-origin: top center;
+
+    transition:
+      opacity var(--duration-fast) var(--ease-default),
+      transform var(--duration-fast) var(--ease-default),
+      visibility var(--duration-fast) var(--ease-default);
+    transition-delay: var(--duration-fast);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: -0.5rem;   
+      z-index: -1;
+    }
+
+    &[data-placement="bottom"],
+    &:not([data-placement]) {
+      top: anchor(bottom);
+      left: anchor(center);
+      translate: -50% 0;
+      margin-top: 0.25rem;   
+      transform-origin: top center;
+      position-try-fallbacks: flip-block;
+    }
+
+    &[data-placement="top"] {
+      bottom: anchor(top);
+      left: anchor(center);
+      translate: -50% 0;
+      margin-bottom: 0.25rem;
+      transform-origin: bottom center;
+      position-try-fallbacks: flip-block;
+    }
+
+    &[data-placement="right"] {
+      top: anchor(center);
+      left: anchor(right);
+      translate: 0 -50%;
+      margin-left: 0.25rem;
+      transform-origin: left center;
+      position-try-fallbacks: flip-inline;
+    }
+
+    &[data-placement="left"] {
+      top: anchor(center);
+      right: anchor(left);
+      translate: 0 -50%;
+      margin-right: 0.25rem;
+      transform-origin: right center;
+      position-try-fallbacks: flip-inline;
+    }
+
+    &:is(:hover, :focus-within) {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: scale(1);
+    }
+  }
+}

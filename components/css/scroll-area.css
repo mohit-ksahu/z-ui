@@ -1,0 +1,33 @@
+@layer components {
+  .scroll-area {
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--border);
+      border-radius: var(--radius-full);
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--muted-foreground);
+        }
+      }
+    }
+  }
+
+  .scroll-area-horizontal {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .scroll-area-vertical {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}

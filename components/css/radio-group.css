@@ -1,0 +1,76 @@
+@layer components {
+  .radio {
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--input);
+    border-radius: var(--radius-full);
+    margin: 0;
+    cursor: pointer;
+    background-color: transparent;
+
+    .dark & {
+      border-color: var(--input);
+      background-color: color-mix(in oklch, var(--input) 30%, transparent);
+    }
+    position: relative;
+    flex-shrink: 0;
+    outline: none;
+    transition: background-color var(--duration-normal) var(--ease-default), border-color var(--duration-normal) var(--ease-default);
+
+    &[aria-invalid] {
+      border-color: var(--destructive);
+    }
+
+    &:checked {
+      border-color: var(--accent);
+      background-color: transparent;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: var(--radius-full);
+        background-color: var(--accent);
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 2);
+
+    &.horizontal {
+      flex-direction: row;
+      gap: calc(var(--spacing) * 4);
+    }
+
+    &[disabled] {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+
+  .radio-group label {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing) * 2);
+    font-size: 0.875rem;
+
+    &:has(.radio:disabled) {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+}

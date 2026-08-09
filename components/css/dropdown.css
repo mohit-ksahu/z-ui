@@ -1,0 +1,164 @@
+@layer components {
+  .dropdown, .dropdown-content {
+    --menu-item-py: calc(var(--spacing) * 1);
+    --menu-item-px: calc(var(--spacing) * 1.5);
+    --menu-font-size: 0.875rem;
+    --menu-icon-size: 1rem;
+    --menu-gap: calc(var(--spacing) * 1.5);
+    --dropdown-width: calc(var(--spacing) * 28);
+  }
+
+  .dropdown[popover] {
+    margin: 0;
+    padding: 0;
+    border: none;
+    inset: unset;
+    position-visibility: always;
+
+    &::backdrop {
+      background: transparent;
+      pointer-events: none;
+    }
+
+    &:popover-open {
+      display: block;
+    }
+  }
+
+  .dropdown[popover],
+  .dropdown-content {
+    padding: var(--spacing);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background-color: var(--popover);
+    color: var(--popover-foreground);
+    box-shadow: var(--shadow-sm);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+  }
+
+  .dropdown[popover][data-placement] {
+    min-width: var(--dropdown-width);
+    width: auto;
+  }
+
+  .dropdown.submenu[popover][data-placement] {
+    min-width: var(--dropdown-width);
+    width: var(--dropdown-width);
+  }
+
+  .dropdown.submenu[data-placement="right"],
+  .dropdown.submenu[data-placement="right-start"],
+  .dropdown.submenu[data-placement="right-end"],
+  .dropdown.submenu[data-placement="right-center"] { margin-left: 0px; }
+
+  .dropdown.submenu[data-placement="left"],
+  .dropdown.submenu[data-placement="left-start"],
+  .dropdown.submenu[data-placement="left-end"],
+  .dropdown.submenu[data-placement="left-center"] { margin-right: 0px; }
+
+  .dropdown.submenu[data-placement="top"],
+  .dropdown.submenu[data-placement="top-start"],
+  .dropdown.submenu[data-placement="top-end"],
+  .dropdown.submenu[data-placement="top-center"] { margin-bottom: 0px; }
+
+  .dropdown.submenu[data-placement="bottom"],
+  .dropdown.submenu[data-placement="bottom-start"],
+  .dropdown.submenu[data-placement="bottom-end"],
+  .dropdown.submenu[data-placement="bottom-center"] { margin-top: 0px; }
+
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: var(--menu-gap);
+    width: 100%;
+    padding: calc(var(--spacing) * 1) calc(var(--spacing) * 1.5);
+    border: none;
+    border-radius: var(--radius);
+    background: transparent;
+    color: inherit;
+    font-size: var(--menu-font-size);
+    line-height: calc(var(--spacing) * 5);
+    text-align: left;
+    cursor: default;
+    outline: none;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--muted);
+        color: var(--foreground);
+      }
+    }
+    &:active,
+    &:focus-visible,
+    &[data-state="open"] {
+      background-color: var(--muted);
+      color: var(--foreground);
+      transition: none;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    &.menu-item-destructive {
+      color: var(--destructive);
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: color-mix(in oklch, var(--destructive) 12%, transparent);
+          color: var(--destructive);
+        }
+      }
+      &:active,
+      &:focus-visible {
+        background-color: color-mix(in oklch, var(--destructive) 18%, transparent);
+        color: var(--destructive);
+      }
+    }
+
+    & svg,
+    & i {
+      width: var(--menu-icon-size);
+      height: var(--menu-icon-size);
+      flex-shrink: 0;
+    }
+  }
+
+  .menu-separator {
+    height: 1px;
+    margin: 0.25rem -0.25rem;
+    background-color: var(--border);
+  }
+
+  .menu-label {
+    padding: calc(var(--spacing) * 1) calc(var(--spacing) * 1.5);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--muted-foreground);
+  }
+
+  .shortcut {
+    margin-left: auto;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--muted-foreground);
+}
+
+  .submenu-trigger {
+    justify-content: space-between;
+
+    & .submenu-icon {
+      margin-left: auto;
+      opacity: 0.5;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
