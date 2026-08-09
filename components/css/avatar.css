@@ -39,7 +39,6 @@
       font-size: 1.25rem;
     }
 
-    &.avatar-sq,
     &.avatar-square {
       border-radius: var(--radius-md);
 
