@@ -1,30 +1,46 @@
-<h1 align="center">ZUI</h1>
+<h1 align="center">Z-UI</h1>
 
 <p align="center">
-  Zero-dependency UI components built with plain HTML, CSS, and vanilla JavaScript.
+  UI components built with HTML, CSS, and vanilla JavaScript.
 </p>
 
 <p align="center">
-  <a href="https://mohit-ksahu.github.io/zui/">Live Preview</a>
+  <a href="https://mohit-ksahu.github.io/z-ui/">Components</a> &bull;
+  <a href="#getting-started">Quick Start</a> &bull;
+  <a href="#license">License</a>
 </p>
 
 ---
 
-## Why
-
-Plain HTML, CSS, and JavaScript with no build step, no framework, and no dependencies.
-Good fit for static sites, server-rendered apps, or any project where you want polished UI without the overhead.
+A collection of accessible UI components you can copy directly into your project. Tweak the styles, customize the behavior, and make them your own.
 
 ## Features
 
-- **Zero dependencies**: No npm or bundler required to use it
-- **Framework agnostic**: Works with React, Vue, Svelte, or plain HTML
-- **Theming**: Fully customizable via CSS variables
-- **Dark mode**: Light, dark, and system preference, with View Transitions and a `setTheme` helper
-- **Keyboard accessible**: Focus management and ARIA throughout
-- **Modern CSS**: Built on `@layer`, `oklch`, `popover`, and CSS Anchor Positioning
+- **Copy and paste**: Take what you need, leave what you don't. No npm or build step needed.
+- **Works everywhere**: Plain HTML, React, Vue, Svelte, or backend templates.
+- **Accessible**: Keyboard navigation, focus states, and ARIA attributes included.
+- **Easy theming**: Customize colors, fonts, and borders with CSS variables.
+- **Dark mode**: Supports light, dark, and system preferences out of the box.
 
-## Components (36)
+## Getting Started
+
+Copy the `components/` folder into your project and link the files in your HTML:
+
+```html
+<link rel="stylesheet" href="path/to/components/index.css">
+<script type="module" src="path/to/components/index.js"></script>
+```
+
+### Production Build (Optional)
+
+Bundle and minify into single files with esbuild:
+
+```bash
+npx esbuild components/index.js --bundle --minify --format=esm --outfile=index.min.js
+npx esbuild components/index.css --bundle --minify --outfile=index.min.css
+```
+
+## Components
 
 | | | | |
 |---|---|---|---|
@@ -38,25 +54,9 @@ Good fit for static sites, server-rendered apps, or any project where you want p
 | Switch | Table | Tabs | Textarea |
 | Toast | Toggle | Toggle Group | Tooltip |
 
-## Getting Started
-
-Copy the `components/` folder into your project and include the files in your HTML:
-
-```html
-<link rel="stylesheet" href="path/to/components/index.css">
-<script type="module" src="path/to/components/index.js"></script>
-```
-
-For production, bundle and minify with **esbuild**:
-
-```bash
-npx esbuild components/index.js --bundle --minify --format=esm --outfile=index.min.js
-npx esbuild components/index.css --bundle --minify --outfile=index.min.css
-```
-
 ## Browser Support
 
-All modern browsers. CSS Anchor Positioning reached Baseline 2026 and is supported in Chrome 125+, Firefox 147+, and Safari 26+.
+Works on all modern browsers (Chrome, Edge, Firefox, Safari).
 
 ## License
 
