@@ -20,12 +20,16 @@
     background-color: var(--primary);
     color: var(--primary-foreground);
     outline: none;
-    transition: background-color var(--duration-normal), border-color var(--duration-normal), color var(--duration-normal);
+    transition: background-color var(--duration-normal), border-color var(--duration-normal), color var(--duration-normal), transform var(--duration-fast) var(--ease-default);
 
     @media (hover: hover) {
       &:hover {
         background-color: color-mix(in oklch, var(--primary) 88%, var(--background));
       }
+    }
+
+    &:active {
+      transform: scale(0.98);
     }
 
     &:not(.btn-icon):not(.btn-icon-sm):not(.btn-icon-lg):not(.btn-icon-xs):not(.btn-icon-xl):empty {

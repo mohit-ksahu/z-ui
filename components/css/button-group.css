@@ -4,6 +4,11 @@
     width: fit-content;
     align-items: stretch;
     isolation: isolate;
+    --btn-group-radius: var(--radius-lg);
+
+    &.btn-group-pill {
+      --btn-group-radius: var(--radius-full);
+    }
 
     & > * {
       position: relative;
@@ -39,13 +44,13 @@
         }
 
         &:first-child {
-          border-start-start-radius: var(--radius-lg);
-          border-end-start-radius: var(--radius-lg);
+          border-start-start-radius: var(--btn-group-radius);
+          border-end-start-radius: var(--btn-group-radius);
         }
 
         &:last-child {
-          border-start-end-radius: var(--radius-lg);
-          border-end-end-radius: var(--radius-lg);
+          border-start-end-radius: var(--btn-group-radius);
+          border-end-end-radius: var(--btn-group-radius);
         }
       }
     }
@@ -59,37 +64,13 @@
         }
 
         &:first-child {
-          border-start-start-radius: var(--radius-lg);
-          border-start-end-radius: var(--radius-lg);
+          border-start-start-radius: var(--btn-group-radius);
+          border-start-end-radius: var(--btn-group-radius);
         }
 
         &:last-child {
-          border-end-start-radius: var(--radius-lg);
-          border-end-end-radius: var(--radius-lg);
-        }
-      }
-    }
-
-    &.btn-group-pill {
-      &:not([aria-orientation="vertical"]) > * {
-        &:first-child {
-          border-start-start-radius: var(--radius-full);
-          border-end-start-radius: var(--radius-full);
-        }
-        &:last-child {
-          border-start-end-radius: var(--radius-full);
-          border-end-end-radius: var(--radius-full);
-        }
-      }
-
-      &[aria-orientation="vertical"] > * {
-        &:first-child {
-          border-start-start-radius: var(--radius-full);
-          border-start-end-radius: var(--radius-full);
-        }
-        &:last-child {
-          border-end-start-radius: var(--radius-full);
-          border-end-end-radius: var(--radius-full);
+          border-end-start-radius: var(--btn-group-radius);
+          border-end-end-radius: var(--btn-group-radius);
         }
       }
     }

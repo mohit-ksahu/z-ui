@@ -2,83 +2,70 @@ const toastMap = {};
 
 const findContainer = placement => {
   if (!toastMap[placement]) {
-    const container = document.createElement('div');
-    container.className = 'toast-container';
-    container.setAttribute('popover', 'manual');
-    container.setAttribute('data-placement', placement);
-    container.setAttribute('role', 'log');
-    container.setAttribute('aria-live', 'polite');
-    document.body.appendChild(container);
-    toastMap[placement] = container;
+    const el = document.createElement('div');
+    el.className = 'toast-container';
+    el.setAttribute('popover', 'manual');
+    el.setAttribute('data-placement', placement);
+    el.setAttribute('role', 'log');
+    el.setAttribute('aria-live', 'polite');
+    document.body.appendChild(el);
+    toastMap[placement] = el;
   }
   return toastMap[placement];
 };
 
-const removeToast = (element, container) => {
-  element.remove();
+const removeToast = (el, container) => {
+  el.remove();
   if (!container.children.length) container.hidePopover();
 };
 
-const showToast = (element, {placement = 'top-right', duration = 4000} = {}) => {
+const showToast = (el, {placement = 'top-right', duration = 4000} = {}) => {
   const container = findContainer(placement);
   let timeout;
 
-  element.classList.add('toast');
-  element.onmouseenter = () => clearTimeout(timeout);
-  element.onmouseleave = () => {
-    if (duration > 0) timeout = setTimeout(() => removeToast(element, container), duration);
+  el.classList.add('toast');
+  el.onmouseenter = () => clearTimeout(timeout);
+  el.onmouseleave = () => {
+    if (duration > 0) timeout = setTimeout(() => removeToast(el, container), duration);
   };
 
-  container.appendChild(element);
+  container.appendChild(el);
   if (!container.matches(':popover-open')) container.showPopover();
-  if (duration > 0) timeout = setTimeout(() => removeToast(element, container), duration);
+  if (duration > 0) timeout = setTimeout(() => removeToast(el, container), duration);
 
-  return element;
+  return el;
 };
 
 export const toast = (content, options = {}) => {
-  const element = document.createElement('output');
-  if (typeof content === 'string') {
-    element.innerHTML = content;
-  } else if (content instanceof Node) {
-    element.appendChild(content);
-  }
-  return showToast(element, options);
+  const el = document.createElement('output');
+  if (typeof content === 'string') el.innerHTML = content;
+  else if (content instanceof Node) el.appendChild(content);
+  return showToast(el, options);
 };
 
-export const toastEl = (element, options = {}) => {
-  const fromTemplate = element instanceof HTMLTemplateElement;
-  const clone = fromTemplate ? element.content.firstElementChild?.cloneNode(true) : element?.cloneNode(true);
-
-  if (clone) {
-    clone.removeAttribute('id');
-    return showToast(clone, options);
-  }
+export const toastEl = (el, options = {}) => {
+  const node = el instanceof HTMLTemplateElement ? el.content.firstElementChild : el;
+  const clone = node?.cloneNode(true);
+  if (!clone) return;
+  clone.removeAttribute('id');
+  return showToast(clone, options);
 };
 
 export const toastClear = placement => {
-  if (placement && toastMap[placement]) {
-    toastMap[placement].innerHTML = '';
-    toastMap[placement].hidePopover();
-  } else {
-    Object.values(toastMap).forEach(container => {
-      container.innerHTML = '';
-      container.hidePopover();
-    });
-  }
+  const list = placement && toastMap[placement] ? [toastMap[placement]] : Object.values(toastMap);
+  list.forEach(c => { c.innerHTML = ''; c.hidePopover(); });
 };
 
-export const toastDismiss = element => {
-  const container = element.closest('.toast-container');
-  if (container) removeToast(element, container);
+export const toastDismiss = el => {
+  const container = el.closest('.toast-container');
+  if (container) removeToast(el, container);
 };
 
 document.addEventListener('click', e => {
-  const dismissBtn = e.target.closest('[data-dismiss]');
-  const targetToast = dismissBtn ? dismissBtn.closest('.toast') : e.target.closest('.toast');
-
-  if (targetToast && (dismissBtn || !e.target.closest('button, a, input, select, textarea'))) {
-    toastDismiss(targetToast);
+  const btn = e.target.closest('[data-dismiss]');
+  const t = btn ? btn.closest('.toast') : e.target.closest('.toast');
+  if (t && (btn || !e.target.closest('button, a, input, select, textarea'))) {
+    toastDismiss(t);
   }
 });
 

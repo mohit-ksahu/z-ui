@@ -5,51 +5,13 @@
     z-index: auto;
     color: var(--foreground);
 
-    @media (hover: hover) {
-      &:hover {
-        z-index: 200;
-
-        & .tooltip-content {
-          will-change: opacity, transform;
-
-          &[data-placement="bottom"],
-          &[data-placement="top"],
-          &[data-placement="right"],
-          &[data-placement="left"],
-          &:not([data-placement]) {
-            opacity: 1;
-            visibility: visible;
-          }
-
-          &[data-placement="bottom"],
-          &[data-placement="top"],
-          &:not([data-placement]) {
-            transform: translateX(-50%) translateY(0);
-          }
-
-          &[data-placement="right"],
-          &[data-placement="left"] {
-            transform: translateX(0) translateY(-50%);
-          }
-        }
-      }
-    }
-
-    &:focus-visible,
-    &:has(:focus-visible) {
+    &:is(:hover, :focus-visible, :has(:focus-visible), :focus-within) {
       z-index: 200;
 
       & .tooltip-content {
         will-change: opacity, transform;
-
-        &[data-placement="bottom"],
-        &[data-placement="top"],
-        &[data-placement="right"],
-        &[data-placement="left"],
-        &:not([data-placement]) {
-          opacity: 1;
-          visibility: visible;
-        }
+        opacity: 1;
+        visibility: visible;
 
         &[data-placement="bottom"],
         &[data-placement="top"],
@@ -63,36 +25,6 @@
         }
       }
     }
-
-    @media (hover: none) {
-      &:focus-within {
-        z-index: 200;
-
-        & .tooltip-content {
-          will-change: opacity, transform;
-
-          &[data-placement="bottom"],
-          &[data-placement="top"],
-          &[data-placement="right"],
-          &[data-placement="left"],
-          &:not([data-placement]) {
-            opacity: 1;
-            visibility: visible;
-          }
-
-          &[data-placement="bottom"],
-          &[data-placement="top"],
-          &:not([data-placement]) {
-            transform: translateX(-50%) translateY(0);
-          }
-
-          &[data-placement="right"],
-          &[data-placement="left"] {
-            transform: translateX(0) translateY(-50%);
-          }
-        }
-      }
-    }
   }
 
   .tooltip-content {
@@ -102,7 +34,6 @@
     font-size: 0.75rem;
     white-space: nowrap;
     border-radius: var(--radius-sm);
-
     width: max-content;
     max-width: 24rem;
     z-index: 200;

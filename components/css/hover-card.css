@@ -4,29 +4,14 @@
     display: inline-block;
     z-index: auto;
 
-    @media (hover: hover) {
-      &:hover {
-        z-index: 200;
+    &:is(:hover, :focus-within) {
+      z-index: 200;
 
-        & .hover-card-content {
-          opacity: 1;
-          visibility: visible;
-          pointer-events: auto;
-          transform: scale(1);
-        }
-      }
-    }
-
-    @media (hover: none) {
-      &:focus-within {
-        z-index: 200;
-
-        & .hover-card-content {
-          opacity: 1;
-          visibility: visible;
-          pointer-events: auto;
-          transform: scale(1);
-        }
+      & .hover-card-content {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: scale(1);
       }
     }
   }
@@ -70,7 +55,7 @@
       top: anchor(bottom);
       left: anchor(center);
       translate: -50% 0;
-      margin-top: 0.25rem;   
+      margin-top: 0.25rem;
       transform-origin: top center;
       position-try-fallbacks: flip-block;
     }

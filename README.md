@@ -26,16 +26,17 @@ Good fit for static sites, server-rendered apps, or any project where you want p
 
 ## Components (36)
 
-| | | | | |
-|---|---|---|---|---|
-| Accordion | Avatar | Badge | Breadcrumb | Button |
-| Button Group | Card | Checkbox | Combobox | Dialog |
-| Dropdown | Hover Card | Input | Input Group | Kbd |
-| Label | Pagination | Popover | Progress | Radio Group |
-| Scroll Area | Select | Separator | Sheet | Sidebar |
-| Skeleton | Slider | Spinner | Switch | Table |
-| Tabs | Textarea | Toast | Toggle | Toggle Group |
-| Tooltip | | | | |
+| | | | |
+|---|---|---|---|
+| Accordion | Avatar | Badge | Breadcrumb |
+| Button | Button Group | Card | Checkbox |
+| Combobox | Dialog | Dropdown | Hover Card |
+| Input | Input Group | Kbd | Label |
+| Pagination | Popover | Progress | Radio Group |
+| Scroll Area | Select | Separator | Sheet |
+| Sidebar | Skeleton | Slider | Spinner |
+| Switch | Table | Tabs | Textarea |
+| Toast | Toggle | Toggle Group | Tooltip |
 
 ## Getting Started
 
