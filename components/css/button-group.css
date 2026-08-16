@@ -10,7 +10,7 @@
       border-radius: 0;
 
       &:not(.btn-outline):not(.btn-ghost):not(.btn-secondary):not(.btn-destructive):not(.btn-group-text) {
-        border-color: color-mix(in oklch, var(--primary-foreground) 20%, transparent);
+        border-color: var(--background);
       }
 
       &.btn-secondary {
@@ -18,7 +18,7 @@
       }
 
       &.btn-destructive {
-        border-color: color-mix(in oklch, var(--destructive) 25%, transparent);
+        border-color: color-mix(in oklch, var(--destructive-foreground) 25%, transparent);
       }
 
       &:is(:hover, :focus-visible, :active, .active) {
