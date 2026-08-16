@@ -4,19 +4,30 @@
 
   <!-- Variants -->
   <h3>Variants</h3>
-  <p class="section-meta">Standard styles for different semantic contexts.</p>
+  <p class="section-meta">Standard styles with theme-scaled corner radius.</p>
   <preview>
-    <span class="badge badge-default">Active</span>
-    <span class="badge badge-secondary">Pending</span>
-    <span class="badge badge-outline">Draft</span>
-    <span class="badge badge-destructive">Archived</span>
+    <span class="badge">Primary</span>
+    <span class="badge badge-secondary">Secondary</span>
+    <span class="badge badge-outline">Outline</span>
+    <span class="badge badge-destructive">Destructive</span>
+    <span class="badge badge-ghost">Ghost</span>
+  </preview>
+
+  <!-- Pill Badges -->
+  <h3>Pill</h3>
+  <p class="section-meta">Capsule-shaped badges using the <code>badge-pill</code> modifier.</p>
+  <preview>
+    <span class="badge badge-pill">Primary</span>
+    <span class="badge badge-secondary badge-pill">Secondary</span>
+    <span class="badge badge-outline badge-pill">Outline</span>
+    <span class="badge badge-destructive badge-pill">Destructive</span>
   </preview>
 
   <!-- With Icon -->
   <h3>With Icon</h3>
   <p class="section-meta">Composing badges with icons for better visual recognition.</p>
   <preview>
-    <span class="badge badge-default">
+    <span class="badge">
       <i data-lucide="check-circle"></i>
       Success
     </span>
@@ -28,6 +39,24 @@
       <i data-lucide="star"></i>
       Featured
     </span>
+    <span class="badge badge-destructive badge-pill">
+      <i data-lucide="alert-triangle"></i>
+      Warning
+    </span>
+  </preview>
+
+  <!-- Single Letter & Icon Only -->
+  <h3>Single Letter & Icon Only</h3>
+  <p class="section-meta">Compact square and circular badges for counters, initials, and standalone icons.</p>
+  <preview>
+    <span class="badge badge-icon">A</span>
+    <span class="badge badge-secondary badge-icon">B</span>
+    <span class="badge badge-outline badge-icon">1</span>
+    <span class="badge badge-destructive badge-icon">8</span>
+    <span class="badge badge-icon badge-pill">A</span>
+    <span class="badge badge-secondary badge-icon badge-pill">3</span>
+    <span class="badge badge-outline badge-icon badge-pill"><i data-lucide="sparkles"></i></span>
+    <span class="badge badge-destructive badge-icon badge-pill"><i data-lucide="bell"></i></span>
   </preview>
 
   <!-- Link -->
@@ -45,6 +74,10 @@
     <a href="#" class="badge badge-outline">
       Source Code
       <i data-lucide="code"></i>
+    </a>
+    <a href="#" class="badge badge-pill">
+      Documentation
+      <i data-lucide="arrow-right"></i>
     </a>
   </preview>
 

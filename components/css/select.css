@@ -19,17 +19,6 @@
     border: 1px solid var(--input);
     border-radius: var(--radius-lg);
     background-color: transparent;
-
-    .dark & {
-      border-color: var(--input);
-      background-color: color-mix(in oklch, var(--input) 30%, transparent);
-
-      @media (hover: hover) {
-        &:hover:not(:disabled) {
-          background-color: color-mix(in oklch, var(--input) 50%, transparent);
-        }
-      }
-    }
     color: var(--foreground);
     cursor: pointer;
     display: flex;
@@ -43,6 +32,23 @@
     transition: background-color var(--duration-fast) var(--ease-default),
                 border-color var(--duration-fast) var(--ease-default),
                 color var(--duration-fast) var(--ease-default);
+
+    .dark & {
+      border-color: var(--input);
+      background-color: color-mix(in oklch, var(--input) 30%, transparent);
+
+      @media (hover: hover) {
+        &:hover:not(:disabled) {
+          background-color: color-mix(in oklch, var(--input) 50%, transparent);
+        }
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover:not(:disabled) {
+        background-color: var(--accent);
+      }
+    }
 
     &[aria-invalid="true"],
     &[aria-invalid] {
@@ -113,6 +119,7 @@
     padding: calc(var(--spacing) * 1);
     margin: 0;
     position-area: block-end span-inline-end;
+    position-visibility: anchors-visible;
     margin-block-start: var(--spacing);
     position-try-fallbacks: --picker-above;
     min-width: max(9rem, anchor-size(width));
@@ -137,7 +144,7 @@
     align-items: center;
     gap: 0.375rem;
     padding: 0.375rem 2rem 0.375rem 0.5rem;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-sm);
     cursor: pointer;
     color: var(--popover-foreground);
     font-size: 0.875rem;
@@ -151,14 +158,10 @@
     display: none;
   }
 
-  .select option:is(:hover, :active, :focus-visible) {
-    background-color: var(--muted);
-    color: var(--foreground);
+  .select option:is(:hover, :active, :focus-visible, :checked) {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
     outline: none;
-  }
-
-  .select option:checked {
-    color: var(--foreground);
   }
 
   .select option::checkmark {

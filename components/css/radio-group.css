@@ -8,11 +8,6 @@
     margin: 0;
     cursor: pointer;
     background-color: transparent;
-
-    .dark & {
-      border-color: var(--input);
-      background-color: color-mix(in oklch, var(--input) 30%, transparent);
-    }
     position: relative;
     flex-shrink: 0;
     outline: none;
@@ -23,7 +18,7 @@
     }
 
     &:checked {
-      border-color: var(--accent);
+      border-color: var(--primary);
       background-color: transparent;
 
       &::after {
@@ -34,7 +29,7 @@
         width: 0.5rem;
         height: 0.5rem;
         border-radius: var(--radius-full);
-        background-color: var(--accent);
+        background-color: var(--primary);
         transform: translate(-50%, -50%);
       }
     }
@@ -51,7 +46,8 @@
     flex-direction: column;
     gap: calc(var(--spacing) * 2);
 
-    &.horizontal {
+    &.horizontal,
+    &[aria-orientation="horizontal"] {
       flex-direction: row;
       gap: calc(var(--spacing) * 4);
     }

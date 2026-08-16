@@ -1,5 +1,5 @@
 @layer components {
-  .dropdown, .dropdown-content {
+  .dropdown {
     --menu-item-py: calc(var(--spacing) * 1);
     --menu-item-px: calc(var(--spacing) * 1.5);
     --menu-font-size: 0.875rem;
@@ -10,23 +10,6 @@
 
   .dropdown[popover] {
     margin: 0;
-    padding: 0;
-    border: none;
-    inset: unset;
-    position-visibility: always;
-
-    &::backdrop {
-      background: transparent;
-      pointer-events: none;
-    }
-
-    &:popover-open {
-      display: block;
-    }
-  }
-
-  .dropdown[popover],
-  .dropdown-content {
     padding: var(--spacing);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
@@ -36,6 +19,17 @@
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-gutter: stable;
+    inset: unset;
+    position-visibility: anchors-visible;
+
+    &::backdrop {
+      background: transparent;
+      pointer-events: none;
+    }
+
+    &:popover-open {
+      display: block;
+    }
   }
 
   .dropdown[popover][data-placement] {
@@ -75,7 +69,7 @@
     width: 100%;
     padding: calc(var(--spacing) * 1) calc(var(--spacing) * 1.5);
     border: none;
-    border-radius: var(--radius);
+    border-radius: var(--radius-sm);
     background: transparent;
     color: inherit;
     font-size: var(--menu-font-size);
@@ -90,15 +84,15 @@
 
     @media (hover: hover) {
       &:hover {
-        background-color: var(--muted);
-        color: var(--foreground);
+        background-color: var(--accent);
+        color: var(--accent-foreground);
       }
     }
     &:active,
     &:focus-visible,
     &[data-state="open"] {
-      background-color: var(--muted);
-      color: var(--foreground);
+      background-color: var(--accent);
+      color: var(--accent-foreground);
       transition: none;
     }
 
@@ -149,7 +143,7 @@
     font-size: 0.75rem;
     letter-spacing: 0.1em;
     color: var(--muted-foreground);
-}
+  }
 
   .submenu-trigger {
     justify-content: space-between;

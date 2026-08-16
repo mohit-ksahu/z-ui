@@ -2,6 +2,53 @@
   <h2>Input Group</h2>
   <p class="section-meta">A group of related inputs and addons, useful for combining labels, icons, and actions.</p>
 
+  <!-- Copy Addons -->
+  <h3>Copy Addon</h3>
+  <p class="section-meta">Interactive copy buttons with clipboard integration and visual feedback.</p>
+  <preview style="max-width: 24rem; flex-direction: column; gap: 0.75rem">
+    <!-- Command Copy -->
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i data-lucide="terminal"></i>
+      </div>
+      <input type="text" class="input" value="npm i @tui/core" readonly style="font-family: var(--font-mono); font-size: 0.8125rem" />
+      <div class="input-group-addon">
+        <button class="btn btn-ghost btn-icon-sm copy-btn" aria-label="Copy command" title="Copy command">
+          <i data-lucide="copy"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Share Link Copy -->
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i data-lucide="link"></i>
+      </div>
+      <input type="text" class="input" value="https://example.com/share/project-842" readonly />
+      <div class="input-group-addon">
+        <button class="btn btn-secondary btn-sm copy-link-btn">
+          Copy Link
+        </button>
+      </div>
+    </div>
+
+    <!-- API Key with Reveal & Copy -->
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i data-lucide="key"></i>
+      </div>
+      <input type="password" class="input" value="sk_live_51Hz8A92LmPqK83X" readonly style="font-family: var(--font-mono); font-size: 0.8125rem" />
+      <div class="input-group-addon">
+        <button class="btn btn-ghost btn-icon-sm toggle-eye-btn" aria-label="Toggle password visibility" title="Show / Hide">
+          <i data-lucide="eye"></i>
+        </button>
+        <button class="btn btn-ghost btn-icon-sm copy-btn" aria-label="Copy API Key" title="Copy API Key">
+          <i data-lucide="copy"></i>
+        </button>
+      </div>
+    </div>
+  </preview>
+
   <!-- Icon -->
   <h3>Addon Icons</h3>
   <preview style="max-width: 24rem">
@@ -36,12 +83,6 @@
   <h3>Button Addons</h3>
   <preview style="max-width: 24rem">
     <div class="input-group">
-      <div class="input-group-addon">
-        <button class="btn btn-secondary">Copy Link</button>
-      </div>
-      <input type="text" class="input" value="https://example.com/share/unique-id" readonly />
-    </div>
-    <div class="input-group">
       <input type="text" class="input" placeholder="Enter website URL" />
       <div class="input-group-addon">
         <button class="btn btn-primary">Connect</button>
@@ -50,7 +91,7 @@
     <div class="input-group">
       <input type="text" class="input" placeholder="Filter items..." />
       <div class="input-group-addon">
-        <button class="btn btn-ghost btn-icon" aria-label="Filter">
+        <button class="btn btn-ghost btn-icon-sm" aria-label="Filter">
           <i data-lucide="filter"></i>
         </button>
       </div>
@@ -236,4 +277,5 @@ Alex</textarea>
       </div>
     </div>
   </preview>
+
 </section>

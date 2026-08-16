@@ -2,10 +2,10 @@
   <h2>Table</h2>
   <p class="section-meta">A responsive data table component with headers, footers, badges, and checkboxes.</p>
 
+  <h3>Default Table</h3>
   <preview>
     <div class="table-container">
       <table class="table">
-        <caption class="table-caption">A list of your recent invoices.</caption>
         <thead class="table-header">
           <tr class="table-row">
             <th class="table-head"><input type="checkbox" class="checkbox" aria-label="Select all" /></th>
@@ -51,6 +51,43 @@
             <td class="table-cell" align="right">$1,200.00</td>
           </tr>
         </tfoot>
+      </table>
+    </div>
+  </preview>
+
+  <h3>Table with Caption</h3>
+  <preview>
+    <div class="table-container">
+      <table class="table">
+        <caption class="table-caption">A list of your recent invoices.</caption>
+        <thead class="table-header">
+          <tr class="table-row">
+            <th class="table-head">Invoice</th>
+            <th class="table-head">Status</th>
+            <th class="table-head">Method</th>
+            <th class="table-head" align="right">Amount</th>
+          </tr>
+        </thead>
+        <tbody class="table-body">
+          <tr class="table-row">
+            <td class="table-cell font-medium">INV001</td>
+            <td class="table-cell"><span class="badge">Paid</span></td>
+            <td class="table-cell">Credit Card</td>
+            <td class="table-cell" align="right">$250.00</td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell font-medium">INV002</td>
+            <td class="table-cell"><span class="badge badge-secondary">Pending</span></td>
+            <td class="table-cell">PayPal</td>
+            <td class="table-cell" align="right">$150.00</td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell font-medium">INV003</td>
+            <td class="table-cell"><span class="badge badge-destructive">Unpaid</span></td>
+            <td class="table-cell">Bank Transfer</td>
+            <td class="table-cell" align="right">$350.00</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </preview>

@@ -7,7 +7,7 @@
     justify-content: center;
     gap: calc(var(--spacing) * 1.5);
     white-space: nowrap;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1.25;
@@ -54,7 +54,8 @@
 
       @media (hover: hover) {
         &:hover {
-          background-color: color-mix(in oklch, var(--secondary) 80%, var(--foreground));
+          background-color: var(--accent);
+          color: var(--accent-foreground);
         }
       }
     }
@@ -66,8 +67,8 @@
 
       @media (hover: hover) {
         &:hover {
-          background-color: var(--muted);
-          color: var(--foreground);
+          background-color: var(--accent);
+          color: var(--accent-foreground);
         }
       }
 
@@ -89,8 +90,8 @@
 
       @media (hover: hover) {
         &:hover {
-          background-color: var(--muted);
-          color: var(--foreground);
+          background-color: var(--accent);
+          color: var(--accent-foreground);
         }
       }
     }
@@ -153,6 +154,10 @@
 
     &.btn-wide {
       padding-inline: 2.5rem;
+    }
+
+    &.btn-pill {
+      border-radius: var(--radius-full);
     }
 
     &.btn-icon-xs {

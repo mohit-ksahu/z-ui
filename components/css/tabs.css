@@ -34,7 +34,7 @@
     .tabs-indicator {
       position: absolute;
       z-index: -1;
-      border-radius: var(--radius);
+      border-radius: var(--radius-md);
       background: var(--card);
       border: 1px solid var(--border);
       box-shadow: var(--shadow-xs);
@@ -52,7 +52,7 @@
     flex: 1;
     padding: 0 calc(var(--spacing) * 3);
     border: 1px solid transparent;
-    border-radius: var(--radius);
+    border-radius: var(--radius-md);
     background: transparent;
     font: inherit;
     font-size: 0.875rem;

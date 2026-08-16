@@ -64,8 +64,12 @@ const select = (item, addOnly = false) => {
 };
 
 document.addEventListener('toggle', e => {
-  if (e.newState === 'open' && e.target.matches('.combobox-popover'))
-    e.target.querySelector('.combobox-input')?.focus();
+  if (e.newState !== 'open' || !e.target.matches('.combobox-popover')) return;
+  const input = e.target.querySelector('.combobox-input');
+  if (!input) return;
+  input.value = '';
+  filter(e.target, '');
+  input.focus();
 }, true);
 
 document.addEventListener('input', e => {

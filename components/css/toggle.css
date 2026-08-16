@@ -9,7 +9,7 @@
     min-width: 2rem;
     padding: 0 calc(var(--spacing) * 2);
     border: 1px solid transparent;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     background: transparent;
     color: var(--muted-foreground);
     font: inherit;
@@ -23,15 +23,15 @@
 
     @media (hover: hover) {
       &:hover {
-        background-color: var(--muted);
-        color: var(--foreground);
+        background-color: var(--accent);
+        color: var(--accent-foreground);
       }
     }
 
     &:active,
     &[aria-pressed="true"] {
-      background-color: var(--muted);
-      color: var(--foreground);
+      background-color: var(--accent);
+      color: var(--accent-foreground);
     }
 
     &:disabled {
@@ -40,7 +40,13 @@
     }
 
     &.toggle-outline {
-      border-color: var(--border);
+      border-color: var(--input);
+      background-color: transparent;
+
+      .dark & {
+        border-color: var(--input);
+        background-color: color-mix(in oklch, var(--input) 30%, transparent);
+      }
     }
 
     &.toggle-sm {
@@ -48,7 +54,7 @@
       min-width: 1.75rem;
       padding: 0 calc(var(--spacing) * 1.5);
       font-size: 0.8rem;
-      border-radius: min(var(--radius-lg), 12px);
+      border-radius: var(--radius-sm);
     }
 
     &.toggle-lg {
@@ -79,8 +85,8 @@
     pointer-events: none;
 
     &:checked + .toggle {
-      background-color: var(--muted);
-      color: var(--foreground);
+      background-color: var(--accent);
+      color: var(--accent-foreground);
     }
 
     &:disabled + .toggle {

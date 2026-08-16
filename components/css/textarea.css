@@ -7,10 +7,6 @@
     border-radius: var(--radius-lg);
     border: 1px solid var(--input);
     background-color: transparent;
-
-    .dark & {
-      background-color: color-mix(in oklch, var(--input) 30%, transparent);
-    }
     padding: calc(var(--spacing) * 2) calc(var(--spacing) * 2.5);
     font-size: 0.875rem;
     color: var(--foreground);
@@ -18,6 +14,11 @@
     resize: vertical;
     transition: color var(--duration-normal), background-color var(--duration-normal), border-color var(--duration-normal);
     outline: none;
+
+    .dark & {
+      border-color: var(--input);
+      background-color: color-mix(in oklch, var(--input) 30%, transparent);
+    }
 
     &::placeholder {
       color: var(--muted-foreground);
@@ -27,7 +28,6 @@
       pointer-events: none;
       cursor: not-allowed;
       opacity: 0.5;
-      background-color: var(--background);
     }
 
     &[aria-invalid] {

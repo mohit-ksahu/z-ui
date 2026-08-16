@@ -10,10 +10,20 @@
     <button class="btn btn-outline">Outline</button>
     <button class="btn btn-ghost">Ghost</button>
     <button class="btn btn-link">Link</button>
+    <button class="btn btn-plain">Plain</button>
+  </preview>
+
+  <h3>Full Radius (Pill Buttons)</h3>
+  <preview style="flex-wrap: wrap; gap: 0.75rem">
+    <button class="btn btn-pill">Primary Pill</button>
+    <button class="btn btn-secondary btn-pill">Secondary Pill</button>
+    <button class="btn btn-destructive btn-pill">Destructive Pill</button>
+    <button class="btn btn-outline btn-pill">Outline Pill</button>
+    <button class="btn btn-ghost btn-pill">Ghost Pill</button>
   </preview>
 
   <h3>Sizes</h3>
-  <preview style="flex-wrap: wrap; gap: 0.75rem">
+  <preview style="flex-wrap: wrap; gap: 0.75rem; align-items: center">
     <button class="btn btn-xs">Extra Small</button>
     <button class="btn btn-sm">Small</button>
     <button class="btn">Default</button>
@@ -21,36 +31,35 @@
     <button class="btn btn-xl">Extra Large</button>
   </preview>
 
-  <h3>States</h3>
+  <h3>Icons & Icon Buttons</h3>
   <preview style="flex-wrap: wrap; gap: 0.75rem; align-items: center">
-    <button class="btn" disabled>Disabled</button>
-    <button class="btn btn-outline btn-icon" aria-label="Magic">
-      <i data-lucide="wand-2"></i>
-    </button>
     <button class="btn">
       <i data-lucide="send"></i>
       Send Message
     </button>
-    <button class="btn" disabled>
-      <div class="spinner"></div>
-      Please wait
+    <button class="btn btn-outline">
+      <i data-lucide="download"></i>
+      Download
     </button>
     <div style="display: flex; align-items: center; gap: 0.375rem">
-      <button class="btn btn-outline btn-icon-xs" aria-label="xs">
-        <i data-lucide="settings"></i>
-      </button>
-      <button class="btn btn-outline btn-icon-sm" aria-label="sm">
-        <i data-lucide="settings"></i>
-      </button>
-      <button class="btn btn-outline btn-icon" aria-label="md">
-        <i data-lucide="settings"></i>
-      </button>
-      <button class="btn btn-outline btn-icon-lg" aria-label="lg">
-        <i data-lucide="settings"></i>
-      </button>
-      <button class="btn btn-outline btn-icon-xl" aria-label="xl">
-        <i data-lucide="settings"></i>
-      </button>
+      <button class="btn btn-outline btn-icon-xs" aria-label="xs"><i data-lucide="settings"></i></button>
+      <button class="btn btn-outline btn-icon-sm" aria-label="sm"><i data-lucide="settings"></i></button>
+      <button class="btn btn-outline btn-icon" aria-label="md"><i data-lucide="settings"></i></button>
+      <button class="btn btn-outline btn-icon-lg" aria-label="lg"><i data-lucide="settings"></i></button>
+      <button class="btn btn-outline btn-icon-xl" aria-label="xl"><i data-lucide="settings"></i></button>
     </div>
+  </preview>
+
+  <h3>Layout & States</h3>
+  <preview style="flex-direction: column; gap: 0.75rem">
+    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center">
+      <button class="btn" disabled>Disabled</button>
+      <button class="btn" disabled>
+        <div class="spinner"></div>
+        Please wait
+      </button>
+      <button class="btn btn-wide">Wide Button</button>
+    </div>
+    <button class="btn btn-block">Full Width Block Button</button>
   </preview>
 </section>

@@ -9,7 +9,7 @@
     box-shadow: var(--shadow-sm);
     inset: unset;
     position: absolute;
-    position-visibility: always;
+    position-visibility: anchors-visible;
     width: calc(var(--spacing) * 72);
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -29,7 +29,7 @@
 
   [popover][data-placement] {
     position: fixed;
-    position-visibility: always;
+    position-visibility: anchors-visible;
     box-sizing: border-box;
     width: max-content;
     max-width: 100vw;

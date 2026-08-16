@@ -110,7 +110,7 @@
     visibility: hidden;
     position: fixed;
     pointer-events: none;
-    position-visibility: always;
+    position-visibility: anchors-visible;
     transition: opacity var(--duration-normal) var(--ease-default),
       transform var(--duration-normal) var(--ease-default),
       visibility var(--duration-normal) var(--ease-default);

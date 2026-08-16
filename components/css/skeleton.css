@@ -1,7 +1,7 @@
 @layer components {
   .skeleton {
     background-color: var(--muted);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     animation: skeleton-pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 

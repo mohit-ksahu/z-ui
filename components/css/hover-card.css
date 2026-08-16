@@ -33,7 +33,7 @@
 
   .hover-card-content {
     position: fixed;
-    position-visibility: always;
+    position-visibility: anchors-visible;
     z-index: 200;
     width: 16rem;             
     padding: 0.625rem;        

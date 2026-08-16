@@ -3,51 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ZUI</title>
-    <meta
-      name="description"
-      content="A collection of 35 ready-to-use UI components built with plain HTML, CSS, and JavaScript."
-    />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-    <link rel="stylesheet" href="index.min.css" />
+    <title>Components</title>
+    <link rel="stylesheet" href="components/index.css" />
     <link
       id="prism-theme-light"
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/katorlys/prism-theme-github/themes/prism-theme-github-light.css"
-      media="print"
-      onload="this.media = 'all'"
     />
     <link
       id="prism-theme-dark"
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/katorlys/prism-theme-github/themes/prism-theme-github-dark.css"
-      media="print"
-      onload="this.media = 'all'"
     />
     <script src="https://cdn.jsdelivr.net/npm/lucide@1.27.0/dist/umd/lucide.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media = 'all'"
-    />
     <script>
       {
         const theme = localStorage.getItem("theme") || "system";
         const dark = theme === "system" ? matchMedia("(prefers-color-scheme: dark)").matches : theme === "dark";
 
-        const updateTheme = (dark) => {
-          document.documentElement.classList.toggle("dark", dark);
-          document.documentElement.classList.toggle("light", !dark && theme !== "system");
+        const updateTheme = (isDark) => {
+          document.documentElement.classList.toggle("dark", isDark);
+          document.documentElement.classList.toggle("light", !isDark && theme !== "system");
           const lightStyle = document.getElementById("prism-theme-light");
           const darkStyle = document.getElementById("prism-theme-dark");
           if (lightStyle && darkStyle) {
-            lightStyle.disabled = dark;
-            darkStyle.disabled = !dark;
+            lightStyle.disabled = isDark;
+            darkStyle.disabled = !isDark;
           }
         };
 
@@ -63,120 +45,7 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        scroll-behavior: auto !important;
-      }
-
-      /* Persistent Sidebar Site Layout */
-      body > .sidebar-provider {
-        display: flex;
-        flex-direction: row;
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        position: relative;
-        background-color: var(--background);
-      }
-
-      /* Persistent Sidebar on Left */
-      body > .sidebar-provider .sidebar-aside {
-        width: 15rem;
-        height: 100%;
-        flex-shrink: 0;
-        display: flex;
-        flex-direction: column;
-        background-color: var(--sidebar);
-        color: var(--sidebar-foreground);
-        border-right: 1px solid var(--sidebar-border);
-        transition: transform var(--duration-normal) var(--ease-default);
-        z-index: 40;
-      }
-
-      body > .sidebar-provider .sidebar-aside .sidebar-header {
-        height: 3.5rem;
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 1rem;
-        border-bottom: 1px solid var(--sidebar-border);
-      }
-
-      /* Right Main Content Area */
-      body > .sidebar-provider > .sidebar-inset {
-        flex: 1;
-        min-width: 0;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        background-color: var(--background);
-        overflow: hidden;
-      }
-
-      body > .sidebar-provider > .sidebar-inset > header.topnav {
-        height: 3.5rem;
-        width: 100%;
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 1.5rem;
-        background-color: var(--background);
-        border-bottom: 1px solid var(--border);
-        z-index: 30;
-      }
-
-      body > .sidebar-provider > .sidebar-inset > .content-wrapper {
-        flex: 1;
-        min-height: 0;
-        overflow-y: auto;
-        position: relative;
-      }
-
-      @media (max-width: 768px) {
-        body > .sidebar-provider .sidebar-aside {
-          position: fixed;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          z-index: 50;
-          width: 16rem;
-          max-width: 85vw;
-          box-shadow: var(--shadow-lg);
-          transform: translateX(-100%);
-        }
-
-        body > .sidebar-provider[data-state="open"] .sidebar-aside {
-          transform: translateX(0);
-        }
-
-        .mobile-sidebar-trigger,
-        .mobile-only {
-          display: inline-flex;
-        }
-      }
-
-      @media (min-width: 769px) {
-        .mobile-sidebar-trigger,
-        .mobile-only {
-          display: none;
-        }
-      }
-
-      .skip-link {
-        position: fixed;
-        top: -100px;
-        left: 1rem;
-        z-index: 1000;
-        padding: 0.5rem 1rem;
-        background: var(--background);
-        color: var(--foreground);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        text-decoration: none;
-      }
-
-      .skip-link:focus {
-        top: 1rem;
+        font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
       }
 
       .header-actions {
@@ -186,36 +55,25 @@
         gap: 0.5rem;
       }
 
-      .content-wrapper {
-        display: flex;
-        flex: 1;
-        min-height: 0;
-        position: relative;
-        overflow-y: auto;
-      }
-
-      .main-content {
-        flex: 1;
-        min-width: 0;
-      }
-
       .content {
         padding: 0 2.5rem;
       }
 
+      @media (max-width: 768px) {
+        #main-sidebar {
+          width: 100vw;
+          max-width: 100vw;
+        }
+      }
+
+      @media (min-width: 769px) {
+        #main-sidebar .sidebar-trigger {
+          display: none;
+        }
+      }
+
       .section {
         padding: 1.75rem 0;
-      }
-
-      .section > :first-child {
-        margin-top: 0 !important;
-      }
-
-      .section > h1 {
-        font-size: 2.25rem;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        margin-bottom: 0.5rem;
       }
 
       .section > h2 {
@@ -228,80 +86,25 @@
       }
 
       .section > h3 {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         font-weight: 600;
-        margin: 2rem 0 1rem;
+        margin: 1.75rem 0 0.75rem;
       }
 
-      .section > p,
-      .section > ul {
-        margin-bottom: 1.25rem;
-        color: var(--muted-foreground);
-        line-height: 1.7;
-      }
-
-      .section > ul {
-        padding-left: 1.5rem;
-      }
-
-      .section > ul li {
-        margin-bottom: 0.35rem;
-      }
-
-      .section code {
-        font-family: var(--font-mono);
-        font-size: 0.85em;
-        background: var(--muted);
-        padding: 0.15em 0.3em;
-        border-radius: var(--radius);
-        border: 1px solid var(--border);
-        color: var(--foreground);
-      }
-
-      .section > .section-meta {
+      .section > p.section-meta {
         font-size: 1.125rem;
-        margin-bottom: 2rem;
-      }
-
-      .separator {
-        margin: 1.5rem 0;
+        margin-bottom: 1.75rem;
+        color: var(--muted-foreground);
       }
 
       .component-block {
         border: 1px solid var(--border);
-        border-radius: var(--radius);
+        border-radius: var(--radius-lg);
         margin-bottom: 1.5rem;
         overflow: hidden;
+        background-color: var(--background);
       }
 
-      .component-block-header {
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-        border-bottom: 1px solid var(--border);
-        padding: 0.25rem 0.75rem;
-        background: var(--background);
-      }
-
-      .component-block-header .label {
-        font-size: 0.75rem;
-        color: var(--muted-foreground);
-        font-weight: 500;
-      }
-
-      .component-block-header .btn {
-        margin-left: auto;
-      }
-
-      .component-block-header.code-header:not(:first-child) {
-        border-top: 1px solid var(--border);
-      }
-
-      .code-header {
-        border-bottom: none;
-      }
-
-      /* Collapsible Code Previews */
       .code-pane-wrapper {
         position: relative;
         background: var(--background);
@@ -329,7 +132,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        height: 100px;
+        height: 90px;
         background: linear-gradient(to bottom, transparent 0%, var(--background) 85%);
         display: flex;
         align-items: flex-end;
@@ -344,45 +147,13 @@
       }
 
       .component-preview {
-        padding: 3rem 2.5rem;
+        padding: 2.5rem 2rem;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        gap: 1.5rem;
+        gap: 1.25rem;
         background: var(--background);
-      }
-
-      .component-preview .sidebar-provider {
-        position: relative;
-        inset: auto;
-        width: 100%;
-        height: 100%;
-        min-height: 400px;
-        z-index: 1;
-      }
-
-      .component-preview.col {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .component-preview.start {
-        justify-content: flex-start;
-      }
-
-      .component-preview.gap-1-5 {
-        gap: 0.375rem;
-      }
-
-      .component-preview.max-w-sm > * {
-        max-width: 320px;
-        width: 100%;
-      }
-
-      .component-preview.max-w-md > * {
-        max-width: 380px;
-        width: 100%;
       }
 
       .code-pane {
@@ -391,31 +162,22 @@
         border-top: 1px solid var(--border);
       }
 
-      #theming .code-pane {
-        max-height: none;
-        overflow-y: visible;
-      }
-
       .component-block .code-pane pre {
         margin: 0;
-        font-family: var(--font-mono);
+        font-family: var(--font-mono, monospace);
         font-size: 0.82rem;
         background: var(--background);
         padding: 1.25rem 1.5rem;
-        border-radius: 0;
       }
 
       .code-pane code {
         background: transparent;
         border: none;
         padding: 0;
-        border-radius: 0;
-        text-shadow: none;
         color: var(--foreground);
       }
 
       preview {
-        white-space: pre;
         display: none;
       }
 
@@ -435,375 +197,99 @@
         display: none;
       }
 
-      @media (max-width: 1100px) {
-        .content {
-          padding: 0 2rem;
-        }
-
-        .section {
-          padding: 1.5rem 0;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .content {
-          padding: 0 1rem;
-        }
-
-        .section {
-          padding: 1.25rem 0;
-        }
-
-        .component-preview {
-          padding: 1.5rem 1rem;
-        }
-
-        .section > h1 {
-          font-size: 1.85rem;
-        }
-
-        .section > h2 {
-          font-size: 1.4rem;
-        }
-
-        .section > h3 {
-          font-size: 1.15rem;
-        }
-
-        .code-pane pre {
-          padding: 1rem;
-          font-size: 0.75rem;
-        }
-      }
-
       .page-nav-top {
         display: flex;
         justify-content: flex-end;
-        padding-top: 1.75rem;
+        padding-top: 1.5rem;
         margin-bottom: -1rem;
-      }
-
-      /* Documentation Pagination */
-      .docs-pagination {
-        margin-top: 0.25rem;
-        padding-bottom: 1.5rem;
-        width: 100%;
-      }
-
-      .docs-pagination-content {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        gap: 0.75rem;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .docs-pagination-content .pagination-item {
-        display: flex;
-      }
-
-      .docs-pagination-prev {
-        margin-right: auto;
-      }
-
-      .docs-pagination-next {
-        margin-left: auto;
       }
     </style>
   </head>
 
   <body>
-    <a
-      href="#content"
-      class="skip-link"
-      onclick="
-        event.preventDefault();
-        document.querySelector('.content-wrapper')?.focus();
-      "
-    >
-      Skip to content
-    </a>
-    <div class="sidebar-provider" data-state="open" data-variant="default">
-      <aside class="sidebar sidebar-aside" id="main-sidebar" data-placement="left" aria-label="Sidebar Navigation">
-        <header class="sidebar-header">
-          <button class="sidebar-trigger btn btn-ghost btn-icon-xs mobile-only" aria-label="Close Sidebar">
+    <div class="sidebar-provider" data-state="open">
+      <aside class="sidebar" id="main-sidebar" data-collapsible="offcanvas" data-variant="default" aria-label="Sidebar Navigation">
+        <header class="sidebar-header" style="justify-content: space-between;">
+          <span style="font-weight: 600; font-size: 1rem; color: var(--foreground);">Components</span>
+          <button class="sidebar-trigger btn btn-ghost btn-icon-xs" aria-label="Close Sidebar">
             <i data-lucide="x" style="width: 1.1rem; height: 1.1rem;"></i>
           </button>
         </header>
         <nav class="sidebar-content" aria-label="Main Navigation">
-            <div class="sidebar-group">
-              <div class="sidebar-group-label sidebar-expanded-only">Getting Started</div>
-              <ul class="sidebar-menu">
-                <li>
-                  <a class="sidebar-menu-button" href="#introduction">
-                    <span class="sidebar-expanded-only">Introduction</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#installation">
-                    <span class="sidebar-expanded-only">Installation</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#theming"><span class="sidebar-expanded-only">Theming</span></a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="sidebar-group">
-              <div class="sidebar-group-label sidebar-expanded-only" style="margin-top: 0.75rem">Components</div>
-              <ul class="sidebar-menu">
-                <li>
-                  <a class="sidebar-menu-button" href="#accordion">
-                    <span class="sidebar-expanded-only">Accordion</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#avatar"><span class="sidebar-expanded-only">Avatar</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#badge"><span class="sidebar-expanded-only">Badge</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#breadcrumb">
-                    <span class="sidebar-expanded-only">Breadcrumb</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#button"><span class="sidebar-expanded-only">Button</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#button-group">
-                    <span class="sidebar-expanded-only">Button Group</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#card"><span class="sidebar-expanded-only">Card</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#checkbox"><span class="sidebar-expanded-only">Checkbox</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#combobox"><span class="sidebar-expanded-only">Combobox</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#dialog"><span class="sidebar-expanded-only">Dialog</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#dropdown"><span class="sidebar-expanded-only">Dropdown</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#hover-card">
-                    <span class="sidebar-expanded-only">Hover Card</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#input"><span class="sidebar-expanded-only">Input</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#input-group">
-                    <span class="sidebar-expanded-only">Input Group</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#kbd"><span class="sidebar-expanded-only">Kbd</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#label"><span class="sidebar-expanded-only">Label</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#pagination">
-                    <span class="sidebar-expanded-only">Pagination</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#popover"><span class="sidebar-expanded-only">Popover</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#progress"><span class="sidebar-expanded-only">Progress</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#radio-group">
-                    <span class="sidebar-expanded-only">Radio Group</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#scroll-area"><span class="sidebar-expanded-only">Scroll Area</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#select"><span class="sidebar-expanded-only">Select</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#separator">
-                    <span class="sidebar-expanded-only">Separator</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#sheet"><span class="sidebar-expanded-only">Sheet</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#sidebar"><span class="sidebar-expanded-only">Sidebar</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#skeleton"><span class="sidebar-expanded-only">Skeleton</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#slider"><span class="sidebar-expanded-only">Slider</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#spinner"><span class="sidebar-expanded-only">Spinner</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#switch"><span class="sidebar-expanded-only">Switch</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#table"><span class="sidebar-expanded-only">Table</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#tabs"><span class="sidebar-expanded-only">Tabs</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#textarea"><span class="sidebar-expanded-only">Textarea</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#toast"><span class="sidebar-expanded-only">Toast</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#toggle"><span class="sidebar-expanded-only">Toggle</span></a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#toggle-group">
-                    <span class="sidebar-expanded-only">Toggle Group</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="sidebar-menu-button" href="#tooltip"><span class="sidebar-expanded-only">Tooltip</span></a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <footer class="sidebar-footer">
-            <div
-              class="card sidebar-expanded-only"
-              style="padding: 0.5rem; gap: 0.25rem; margin-top: auto; width: 100%; background-color: var(--background)"
-            >
-              <div style="display: flex; flex-direction: column; gap: 0.25rem">
-                <span style="font-size: 0.75rem; opacity: 0.6; font-family: var(--font-mono); line-height: 1">
-                  v0.0.1
-                </span>
-                <p style="margin: 0; font-size: 0.8125rem; font-weight: 500; color: var(--foreground); line-height: 1.2">
-                  UI Foundation
-                </p>
-              </div>
-            </div>
-          </footer>
-        </aside>
-
-        <div class="sidebar-inset">
-          <header class="topnav">
-            <div style="display: flex; align-items: center; gap: 0.5rem">
-              <button
-                class="sidebar-trigger btn btn-ghost btn-icon-sm mobile-sidebar-trigger"
-                aria-label="Toggle Sidebar"
-                aria-controls="main-sidebar"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-              </button>
-            </div>
-            <div class="header-actions">
-              <a
-                href="https://github.com/mohit-ksahu/zui"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-ghost btn-icon-sm"
-                aria-label="GitHub Repository"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-              </a>
-              <button class="btn btn-ghost btn-icon-sm theme-toggle" aria-pressed="false" aria-label="Toggle dark mode">
-                <i data-lucide="moon" class="theme-show-light"></i>
-                <i data-lucide="sun" class="theme-show-dark"></i>
-              </button>
-            </div>
-          </header>
-
-          <div class="content-wrapper" tabindex="-1">
-            <div class="main-content">
-              <main id="content" class="content">
-                <div class="page-nav-top">
-                  <div id="page-header-nav"></div>
-                </div>
-                <div id="main-content">
-                  <section id="introduction" class="section">
-                    <h1>Introduction</h1>
-                    <p class="section-meta">
-                      UI components built with plain HTML, CSS, and vanilla JavaScript.
-                    </p>
-
-                    <h2>Why</h2>
-                    <p>
-                      Plain HTML, CSS, and JavaScript with no build step, no framework, and no dependencies.
-                      <br />
-                      A great fit for static sites, server-rendered apps, or any project where you want polished UI without the overhead.
-                    </p>
-
-                    <h2>Features</h2>
-                    <ul style="color: var(--muted-foreground); line-height: 1.8; margin-bottom: 2.5rem; padding-left: 1.2rem">
-                      <li>
-                        <strong style="color: var(--foreground);">Zero dependencies</strong>: No npm or bundler required to use it
-                      </li>
-                      <li>
-                        <strong style="color: var(--foreground);">Framework agnostic</strong>: Works with React, Vue, Svelte, or plain HTML
-                      </li>
-                      <li>
-                        <strong style="color: var(--foreground);">Theming</strong>: Fully customizable via CSS variables
-                      </li>
-                      <li>
-                        <strong style="color: var(--foreground);">Dark mode</strong>: Light, dark, and system preference, with View Transitions and a <code>setTheme</code> helper
-                      </li>
-                      <li>
-                        <strong style="color: var(--foreground);">Keyboard accessible</strong>: Focus management and ARIA throughout
-                      </li>
-                      <li>
-                        <strong style="color: var(--foreground);">Modern CSS</strong>: Built on <code>@layer</code>, <code>oklch</code>, <code>popover</code>, and CSS Anchor Positioning
-                      </li>
-                    </ul>
-
-                    <h2>Browser Support</h2>
-                    <p>
-                      All modern browsers. CSS Anchor Positioning reached Baseline 2026 and is supported in Chrome 125+, Firefox 147+, and Safari 26+.
-                    </p>
-                  </section>
-                  <nav aria-label="Doc Pagination" class="pagination docs-pagination">
-                    <ul class="pagination-content docs-pagination-content">
-                      <li class="pagination-item"></li>
-                      <li class="pagination-item docs-pagination-next">
-                        <a href="#installation" class="btn btn-outline btn-sm">
-                          <span>Installation</span>
-                          <i data-lucide="chevron-right"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </main>
-            </div>
+          <div class="sidebar-group">
+            <ul class="sidebar-menu">
+              <li><a class="sidebar-menu-button" href="#accordion"><span>Accordion</span></a></li>
+              <li><a class="sidebar-menu-button" href="#avatar"><span>Avatar</span></a></li>
+              <li><a class="sidebar-menu-button" href="#badge"><span>Badge</span></a></li>
+              <li><a class="sidebar-menu-button" href="#breadcrumb"><span>Breadcrumb</span></a></li>
+              <li><a class="sidebar-menu-button" href="#button"><span>Button</span></a></li>
+              <li><a class="sidebar-menu-button" href="#button-group"><span>Button Group</span></a></li>
+              <li><a class="sidebar-menu-button" href="#card"><span>Card</span></a></li>
+              <li><a class="sidebar-menu-button" href="#checkbox"><span>Checkbox</span></a></li>
+              <li><a class="sidebar-menu-button" href="#combobox"><span>Combobox</span></a></li>
+              <li><a class="sidebar-menu-button" href="#dialog"><span>Dialog</span></a></li>
+              <li><a class="sidebar-menu-button" href="#dropdown"><span>Dropdown</span></a></li>
+              <li><a class="sidebar-menu-button" href="#hover-card"><span>Hover Card</span></a></li>
+              <li><a class="sidebar-menu-button" href="#input"><span>Input</span></a></li>
+              <li><a class="sidebar-menu-button" href="#input-group"><span>Input Group</span></a></li>
+              <li><a class="sidebar-menu-button" href="#kbd"><span>Kbd</span></a></li>
+              <li><a class="sidebar-menu-button" href="#label"><span>Label</span></a></li>
+              <li><a class="sidebar-menu-button" href="#pagination"><span>Pagination</span></a></li>
+              <li><a class="sidebar-menu-button" href="#popover"><span>Popover</span></a></li>
+              <li><a class="sidebar-menu-button" href="#progress"><span>Progress</span></a></li>
+              <li><a class="sidebar-menu-button" href="#radio-group"><span>Radio Group</span></a></li>
+              <li><a class="sidebar-menu-button" href="#scroll-area"><span>Scroll Area</span></a></li>
+              <li><a class="sidebar-menu-button" href="#select"><span>Select</span></a></li>
+              <li><a class="sidebar-menu-button" href="#separator"><span>Separator</span></a></li>
+              <li><a class="sidebar-menu-button" href="#sheet"><span>Sheet</span></a></li>
+              <li><a class="sidebar-menu-button" href="#sidebar"><span>Sidebar</span></a></li>
+              <li><a class="sidebar-menu-button" href="#skeleton"><span>Skeleton</span></a></li>
+              <li><a class="sidebar-menu-button" href="#slider"><span>Slider</span></a></li>
+              <li><a class="sidebar-menu-button" href="#spinner"><span>Spinner</span></a></li>
+              <li><a class="sidebar-menu-button" href="#switch"><span>Switch</span></a></li>
+              <li><a class="sidebar-menu-button" href="#table"><span>Table</span></a></li>
+              <li><a class="sidebar-menu-button" href="#tabs"><span>Tabs</span></a></li>
+              <li><a class="sidebar-menu-button" href="#textarea"><span>Textarea</span></a></li>
+              <li><a class="sidebar-menu-button" href="#toast"><span>Toast</span></a></li>
+              <li><a class="sidebar-menu-button" href="#toggle"><span>Toggle</span></a></li>
+              <li><a class="sidebar-menu-button" href="#toggle-group"><span>Toggle Group</span></a></li>
+              <li><a class="sidebar-menu-button" href="#tooltip"><span>Tooltip</span></a></li>
+            </ul>
           </div>
-        </div>
+        </nav>
+      </aside>
+
+      <div class="sidebar-inset">
+        <header class="topnav">
+          <button
+            class="sidebar-trigger btn btn-ghost btn-icon-sm"
+            aria-label="Toggle Sidebar"
+          >
+            <i data-lucide="panel-left"></i>
+          </button>
+          <div class="header-actions">
+            <button class="btn btn-ghost btn-icon-sm theme-toggle" aria-pressed="false" aria-label="Toggle dark mode">
+              <i data-lucide="moon" class="theme-show-light"></i>
+              <i data-lucide="sun" class="theme-show-dark"></i>
+            </button>
+          </div>
+        </header>
+
+        <main id="content" class="content">
+          <div class="page-nav-top">
+            <div id="page-header-nav"></div>
+          </div>
+          <div id="main-content"></div>
+        </main>
       </div>
     </div>
 
-    <script type="module" src="index.min.js"></script>
+    <script type="module" src="components/index.js"></script>
     <script type="module">
       const dedent = (t) => {
-        const l = t.split("\n").filter((s) => s.trim());
-        const m = Math.min(...l.map((s) => s.match(/^\s*/)[0].length));
-        return l
-          .map((s) => s.slice(m))
-          .join("\n")
-          .trim();
+        const lines = t.split("\n").filter((s) => s.trim());
+        const minIndent = Math.min(...lines.map((s) => s.match(/^\s*/)[0].length));
+        return lines.map((s) => s.slice(minIndent)).join("\n").trim();
       };
 
       const COPY_BTN = `<button class="btn btn-ghost btn-icon-xs" aria-label="Copy code" onclick="copyCode(this, event)"><i data-lucide="copy" class="icon-copy"></i><i data-lucide="check-check" class="icon-check" style="display:none"></i></button>`;
@@ -820,22 +306,40 @@
         }, 2000);
       };
 
+      document.addEventListener("click", (e) => {
+        const [copy, eye] = [e.target.closest(".copy-btn, .copy-link-btn"), e.target.closest(".toggle-eye-btn")];
+        const val = copy?.closest(".input-group")?.querySelector(".input, .textarea");
+        if (val) {
+          navigator.clipboard?.writeText(val.value);
+          const icon = copy.matches(".copy-btn");
+          copy.innerHTML = icon ? '<i data-lucide="check"></i>' : "Copied!";
+          window.lucide?.createIcons({ root: copy });
+          setTimeout(() => {
+            copy.innerHTML = icon ? '<i data-lucide="copy"></i>' : "Copy Link";
+            window.lucide?.createIcons({ root: copy });
+          }, 1000);
+        } else if (eye) {
+          const input = eye.closest(".input-group")?.querySelector(".input");
+          if (!input) return;
+          input.type = input.type === "password" ? "text" : "password";
+          eye.innerHTML = `<i data-lucide="${input.type === "password" ? "eye" : "eye-off"}"></i>`;
+          window.lucide?.createIcons({ root: eye });
+        }
+      });
+
       const createCodeBlock = (preview, raw, cls = "") => {
         const isSmall = raw.split("\n").length <= 7;
         return `<div class="component-block">
                 ${preview ? `<div class="component-preview ${cls}">${preview}</div>` : ""}
                 <div class="code-pane-wrapper${isSmall ? "" : " collapsed"}">
                     ${COPY_BTN}
-                    <script type="text/plain" style="display:none">${raw}<\/script>
                     <div class="code-pane"><pre><code class="language-html">${raw.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre></div>
                     ${
                       isSmall
                         ? ""
-                        : `
-                    <div class="code-expand-overlay">
-                        <button class="btn btn-outline btn-sm" style="border-radius: var(--radius-full); pointer-events: auto;" onclick="this.closest('.code-pane-wrapper').classList.remove('collapsed')">View Code</button>
-                    </div>
-                    `
+                        : `<div class="code-expand-overlay">
+                            <button class="btn btn-outline btn-sm btn-pill" style="pointer-events: auto;" onclick="this.closest('.code-pane-wrapper').classList.remove('collapsed')">View Code</button>
+                        </div>`
                     }
                 </div>
             </div>`;
@@ -846,22 +350,13 @@
           el.outerHTML = createCodeBlock(el.innerHTML, dedent(el.innerHTML), el.className);
         });
 
-        container.querySelectorAll(".section pre:not(.component-block pre)").forEach((pre) => {
-          const label = pre.getAttribute("data-label") || "Code";
-          const wrapper = document.createElement("div");
-          wrapper.className = "component-block";
-          wrapper.innerHTML = `<div class="component-block-header code-header"><span class="label">${label}</span>${COPY_BTN}<script type="text/plain" style="display:none">${pre.textContent.trim()}<\/script></div><div class="code-pane"></div>`;
-          wrapper.querySelector(".code-pane").appendChild(pre.cloneNode(true));
-          pre.replaceWith(wrapper);
-        });
         window.lucide?.createIcons({ root: container });
         window.Prism?.highlightAllUnder(container);
       };
 
       const pageCache = new Map();
       const mainContent = document.getElementById("main-content");
-      const scrollContainer = document.querySelector(".content-wrapper");
-
+      const scrollContainer = document.getElementById("content");
       const sidebarLinks = Array.from(document.querySelectorAll('#main-sidebar a[href^="#"]'));
 
       const navItems = sidebarLinks.map((a) => ({
@@ -898,38 +393,6 @@
         window.lucide?.createIcons({ root: container });
       };
 
-      const getPaginationHtml = (id) => {
-        const idx = navItems.findIndex((item) => item.id === id);
-        if (idx === -1) return "";
-        const prev = navItems[idx - 1];
-        const next = navItems[idx + 1];
-        if (!prev && !next) return "";
-        return `<nav aria-label="Doc Pagination" class="pagination docs-pagination">
-          <ul class="pagination-content docs-pagination-content">
-            ${
-              prev
-                ? `<li class="pagination-item docs-pagination-prev">
-                    <a href="#${prev.id}" class="btn btn-outline btn-sm">
-                      <i data-lucide="chevron-left"></i>
-                      <span>${prev.title}</span>
-                    </a>
-                  </li>`
-                : ""
-            }
-            ${
-              next
-                ? `<li class="pagination-item docs-pagination-next">
-                    <a href="#${next.id}" class="btn btn-outline btn-sm">
-                      <span>${next.title}</span>
-                      <i data-lucide="chevron-right"></i>
-                    </a>
-                  </li>`
-                : ""
-            }
-          </ul>
-        </nav>`;
-      };
-
       const linkMap = new Map(sidebarLinks.map((a) => [a.hash.slice(1), a]));
       let activeLink = null;
 
@@ -946,16 +409,15 @@
         }
       };
 
-      const getFetchPath = (id) =>
-        ["introduction", "installation", "theming"].includes(id) ? `docs/${id}.html` : `pages/${id}.html`;
+      const getFetchPath = (id) => `pages/${id}.html`;
 
       const loadPage = async (hash) => {
-        const id = hash.replace(/^#/, "") || "introduction";
+        const id = hash.replace(/^#/, "") || "accordion";
         setActive(id);
         updatePageHeaderNav(id);
         scrollContainer.scrollTop = 0;
         if (!pageCache.has(id)) pageCache.set(id, await (await fetch(getFetchPath(id))).text());
-        mainContent.innerHTML = pageCache.get(id) + getPaginationHtml(id);
+        mainContent.innerHTML = pageCache.get(id);
         hydrateComponent(mainContent);
       };
 
@@ -972,17 +434,12 @@
 
       window.addEventListener("DOMContentLoaded", () => {
         window.lucide?.createIcons({ root: document.body });
-        pageCache.set("introduction", mainContent.innerHTML);
-
-        const id = location.hash.slice(1) || "introduction";
+        const id = location.hash.slice(1) || "accordion";
         setActive(id);
-        updatePageHeaderNav(id);
-
-        if (id !== "introduction") loadPage(location.hash);
+        loadPage(id);
 
         sidebarLinks
           .map((a) => a.hash.slice(1))
-          .filter((id) => id !== "introduction")
           .forEach((id) =>
             requestIdleCallback(() =>
               fetch(getFetchPath(id))

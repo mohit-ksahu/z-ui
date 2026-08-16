@@ -18,7 +18,7 @@
       border: 1px solid var(--border);
       overflow: hidden;
 
-      &.radius-full {
+      &.toggle-group-pill {
         border-radius: var(--radius-full);
       }
 
